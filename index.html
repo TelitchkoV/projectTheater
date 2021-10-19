@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Шрифт Open Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кинотеатр Макет</title>
+</head>
+
+<body>
+  <!-- -------------------- header -------------------- -->
+  <header class="header">
+    <section class="section header-menu">
+      <div class="section__wrapper container menu__wrapper">
+
+        <div class="logo">
+          <a class="logo header__logo" href="#">
+            <img src="img/film-strip-svgrepo-com.svg" alt="Логотип">
+          </a>
+        </div>
+
+        <div class="menu">
+          <ul class="mainmenu__list">
+            <li class="mainmenu__item mainmenu__item--padfix"><a class="menu__link" href="#">Фильмы</a></li>
+            <li class="mainmenu__item"><a class="menu__link" href="#">Кинотеатры</a></li>
+            <li class="mainmenu__item"><a class="menu__link" href="#">События</a></li>
+            <li class="mainmenu__item"><a class="menu__link" href="#">Акции</a></li>
+          </ul>
+        </div>
+
+        <div class="social">
+          <ul class="social__list">
+            <li class="social__item social__item--padfix">
+              <a class="social__icon" href="#">
+                <img src="img/iconmonstr-vk-1.svg" alt="ВК">
+              </a>
+            </li>
+            <li class="icon social__item">
+              <a class="social__icon" href="#">
+                <img src="img/iconmonstr-instagram-11.svg" alt="Инст">
+              </a>
+            </li>
+            <li class="icon social__item">
+              <a class="social__icon" href="#">
+                <img src="img/iconmonstr-facebook-1.svg" alt="Фсб">
+              </a>
+            </li>
+            <li class="icon social__item">
+              <a class="social__icon" href="#">
+                <img src="img/odnoklassniki.svg" alt="Одн">
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="login">
+          <div class="login__wrapper">
+            <a href="#" class="menu__link">Войти</a>
+            <label for="login__header" id="login__header--label"></label>
+            <button class="login__header" id="login__header" type="button">
+              <img class="login__header--icon" src="img/sign-in-alt-solid.svg" alt="Войти">
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+  <!-- -------------------- main -------------------- -->
+  <main>
+    <section class="section slider">
+      <div class="container">
+        <span id="slide-1"></span>
+        <span id="slide-2"></span>
+        <span id="slide-3"></span>
+        <div class="slider__imageContainer">
+          <img src="https://s3.kinoteatr.ru/preview/upload/movies/7358/cover.jpg" class="slide" width="500"
+            height="300" />
+          <img src="https://s3.kinoteatr.ru/preview/upload/movies/7388/cover.jpg" class="slide" width="500"
+            height="300" />
+          <img src="https://s3.kinoteatr.ru/preview/upload/movies/7311/cover.jpg" class="slide" width="500"
+            height="300" />
+        </div>
+        <div class="slider__buttons">
+          <a href="#slide-1"></a>
+          <a href="#slide-2"></a>
+          <a href="#slide-3"></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section films">
+      <div class="container section__wrapper films__wrapper">
+
+        <div class="films__today">
+          <h1>Сегодня в кино</h1>
+          <div class="films__today__items section__wrapper films__wrapper">
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover1.jpg" alt=""><p>Веном 2</p></a>
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover2.jpg" alt=""><p>Семейка Аддамс: Горящий тур</p></a>
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover3.jpg" alt=""><p>Не время умирать</p></a>
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover4.jpg" alt=""><p>Дюна</p></a>
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover1.jpg" alt=""><p>Веном 2</p></a>
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover2.jpg" alt=""><p>Семейка Аддамс: Горящий тур</p></a>
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover3.jpg" alt=""><p>Не время умирать</p></a>
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover4.jpg" alt=""><p>Дюна</p></a>
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover1.jpg" alt=""><p>Веном 2</p></a>
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover2.jpg" alt=""><p>Семейка Аддамс: Горящий тур</p></a>
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover3.jpg" alt=""><p>Не время умирать</p></a>
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover4.jpg" alt=""><p>Дюна</p></a>
+          </div>
+        </div>
+
+        <div class="films__soon">
+          <h1>Скоро в кино</h1>
+          <div class="films__today__items section__wrapper films__wrapper">
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover5.png" alt=""><p>Гладиатор</p></a>
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover6.jpg" alt=""><p>Возвращение</p></a>
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover7.jpg" alt=""><p>Кощей. Начало</p></a>
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover8.jpg" alt=""><p>Кошмар на улице вязов</p></a>
+            <a class="films__today__item" href="#"><img class="films__today__card" src="img/cover/cover9.jpg" alt=""><p>Ледяной демон</p></a>
+            <a class="films__today__item" href="#"><div class="films__today__card--empty"><img src="img/plus-svgrepo-com.svg" alt=""><p>Больше фильмов</p></div></a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section events">
+
+    </section>
+  </main>
+  <!-- -------------------- footer -------------------- -->
+  <footer>
+    <div class="section footer">
+      <div class="container section__wrapper films__footer">
+
+        <div class="footer__section">
+          <h3>Для гостей</h3>
+          <ul class="footer__list">
+            <li class="footer__item"><a href="#">Расписание фильмов</a></li>
+            <li class="footer__item"><a href="#">Расписание кинотеатров</a></li>
+            <li class="footer__item"><a href="#">Кинопремьеры 2021</a></li>
+            <li class="footer__item"><a href="#">События</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer__section">
+          <h3>Форматы и залы</h3>
+          <ul class="footer__list">
+            <li class="footer__item"><a href="#">IMAX</a></li>
+            <li class="footer__item"><a href="#">4DX</a></li>
+            <li class="footer__item"><a href="#">Dolby Atmos</a></li>
+            <li class="footer__item"><a href="#">ScreenX</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer__section">
+          <h3>О нас</h3>
+          <ul class="footer__list">
+            <li class="footer__item"><a href="#">Контакты</a></li>
+            <li class="footer__item"><a href="#">Обратная связь</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer__section">
+          <h3>Мы в соцсетях</h3>
+          <ul class="footer__list--social">
+            <li class="social__item social__item--padfix">
+              <a class="social__icon" href="#">
+                <img src="img/iconmonstr-vk-1.svg" alt="ВК">
+              </a>
+            </li>
+            <li class="icon social__item">
+              <a class="social__icon" href="#">
+                <img src="img/iconmonstr-instagram-11.svg" alt="Инст">
+              </a>
+            </li>
+            <li class="icon social__item">
+              <a class="social__icon" href="#">
+                <img src="img/iconmonstr-facebook-1.svg" alt="Фсб">
+              </a>
+            </li>
+            <li class="icon social__item">
+              <a class="social__icon" href="#">
+                <img src="img/odnoklassniki.svg" alt="Одн">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer_width">
+      
+    </div>
+  </footer>
+</body>
+
+</html>
