@@ -7,26 +7,90 @@ html {
   box-sizing: inherit;
 }
 
+
+/* ГЛАВНЫЕ КОНСТАНТЫ ВСЕГО СТИЛЯ */
+
+/* Цвета */
+
+:root{
+  --color-white: #DFDDDD;
+}
+:root{
+  --color-gray: #2E2F38;
+}
+:root{
+  --color-black: #25272E;
+}
+:root{
+  --color-yellow: #FCC232;
+}
+:root{
+  --color-orange: #FD7E41;
+}
+
+
+:root{
+  --color-text-brighter: #FFFFFE;
+}
+:root{
+  --color-text-bright: #DFDDDD;
+}
+:root{
+  --color-text-dark: #A7A9BE;
+}
+:root{
+  --color-text-darker: #46474A;
+}
+:root{
+  --color-text-darkest: #25272E;
+}
+
+
+/* Изменить цвет у SVG */
+:root{
+  --svgColor-yellow: brightness(0) saturate(100%) invert(64%) sepia(73%) saturate(428%) hue-rotate(1deg) brightness(107%) contrast(98%);
+}
+:root{
+  --svgColor-dark: invert(66%) sepia(19%) saturate(220%) hue-rotate(197deg) brightness(100%) contrast(90%);
+}
+
+
+/* Оформление элементов */
+
+:root{
+  --color-background-main: var(--color-gray);
+}
+:root{
+  --color-foreground-main: var(--color-black);
+}
+
+/*----------------------------------*/
+
 body{
 
   min-width: 1110px;
   margin: 0;
   padding: 0;
-  background-color: #25272E;
+  background-color: var(--color-background-main);
 
   /* Весь стандартный текст */
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  color: #DFDDDD;
+  color: var(--color-text-bright);
 }
 ul{
   list-style: none;
 }
 a{
   text-decoration: none;
-  color: #DFDDDD;
+  color: var(--color-text-bright);
+  transition: color .3s linear;
+}
+a:hover{
+  color: var(--color-yellow);
+  /* text-decoration: underline; */
 }
 
 h1,
@@ -48,7 +112,7 @@ header{
   width: 100%;
   top: 0;
   z-index: 100;
-  background-color: #25272E;
+  background-color: var(--color-black);
 }
 
 .container {
@@ -70,20 +134,22 @@ header{
 .section__wrapper{
   justify-content: space-between;
 }
-.mainmenu__list, .social__list {
+
+
+.mainmenu__item{
+  padding-left: 46px;
+  font-size: 20px;
+  line-height: 24px;
+}
+.social__list a{
   display: flex;
-  padding: 0;
-
-  font-family: 'Open Sans', sans-serif;
-  line-height: 17px;
-  letter-spacing: 0.03em;
-  color: #DFDDDD;
 }
 
-.mainmenu__item, .social__item{
-  padding-left: 35px;
+.social__item{
+  padding-left: 25px;
 }
-.mainmenu__item--padfix, .social__item--padfix{
+.mainmenu__item--padfix,
+.social__item--padfix{
   padding-left: 0;
 }
 
@@ -93,43 +159,52 @@ header{
   height: fit-content;
   background: none;
 
- margin: 0;
- padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-/*----------------------------------*/
+.menu__link{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
 /*Иконки svg*/
+.login__header{
+  display: flex;
+}
 .login__header--icon{
-  width: 20px;
+  width: 25px;
   height: auto;
+  filter: var(--svgColor-yellow);
 }
 .header__logo img{
   width: 70px;
   height: auto;
-}
-.login__wrapper button{
-  padding: 20px;
-}
-.social__icon img{
-  width: 30px;
-  height: auto;
+  filter: var(--svgColor-yellow);
 }
 
-/*Изменить цвет у svg*/
-.login__header--icon,
-.header__logo img,
-.social__icon img,
-.films__today__card--empty img{
-  filter: brightness(0) saturate(100%) invert(64%) sepia(73%) saturate(428%) hue-rotate(1deg) brightness(107%) contrast(98%);
+.login__wrapper{
+  font-size: 17px;
+  line-height: 21px;
 }
+.login__wrapper button{
+  padding-left: 20px;
+}
+.social__icon img{
+  width: 25px;
+  height: auto;
+  filter: var(--svgColor-yellow);
+}
+
 
 /*----------------- Main -----------------*/
 
 .slider {
   width: 500px;
   height: 300px;
-  background-color: #DFDDDD;
+  background-color: var(--color-text-bright);
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
@@ -138,7 +213,7 @@ header{
 }
 .slider__imageContainer {
   width: 1500px;
-  background-color: #DFDDDD;
+  background-color: var(--color-text-bright);
   height: 300px;
   clear: both;
   position: relative;
@@ -171,7 +246,7 @@ header{
   height: 15px;
   width: 15px;
   border-radius: 50px;
-  background-color: #DFDDDD;
+  background-color: var(--color-text-bright);
 }
 
 /* !!! ОТКЛЮЧЕН !!! */
@@ -186,7 +261,7 @@ header{
 
 .films{
   padding: 50px 0;
-  background-color: #25272E;
+  background-color: var(--color-background-main);
 }
 
 .films__soon,
@@ -206,20 +281,25 @@ header{
 }
 
 .films__today__items{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
   align-items: flex-start;
   align-content: space-around;
 }
 
 .films__today__item{
-  margin: 20px 0;
-  /* background-color: #3C3F4A; */
+  margin: 30px 0;
+  border-radius: 10px;
+  z-index: 1;
+}
+.films__today__card{
+  outline: solid var(--color-yellow) 0px;
+  outline-offset: 3px;
+  transition: outline .04s linear;
   border-radius: 10px;
 }
-.films__today__item img{
-  border-radius: 10px;
+
+/* ОБВОДКА ВОКРУГ ОБЛОЖЕК ФИЛЬМОВ НА ГЛАВНОЙ СТРАНИЦЕ */
+.films__today__item:hover .films__today__card{
+  outline: solid var(--color-yellow) 2px;
 }
 
 .films__today__item p{
@@ -227,13 +307,105 @@ header{
   width: 160px;
 }
 
+
+
+/* Модификация - флажки над обложками */
+
+.films__today__item.new::before{
+  content: "Новинка";
+
+  display: block;
+  position: absolute;
+
+  height: 50px;
+  width: 160px;
+  margin-top: -27px;
+  padding: 2px 0;
+
+  text-align: center;
+  background-color: var(--color-orange);
+  border-radius: 10px;
+  color: var(--color-text-darkest);
+  font-weight: 700;
+
+  /* Опустить под обложку фильма */
+  z-index: -1;
+}
+
+
+.films__today__item.exclusive::before{
+  content: "Эксклюзив";
+  display: block;
+  position: absolute;
+
+  height: 50px;
+  width: 160px;
+  margin-top: -27px;
+  padding: 2px 0;
+
+  text-align: center;
+  background-color: var(--color-orange);
+  border-radius: 10px;
+  color: var(--color-text-darkest);
+  font-weight: 700;
+
+  /* Опустить под обложку фильма */
+  z-index: -1;
+}
+
+.films__today__item.available::before{
+  content: "В продаже";
+  display: block;
+  position: absolute;
+
+  height: 50px;
+  width: 160px;
+  margin-top: -27px;
+  padding: 2px 0;
+
+  text-align: center;
+  background-color: var(--color-orange);
+  border-radius: 10px;
+  color: var(--color-text-darkest);
+  font-weight: 700;
+
+  /* Опустить под обложку фильма */
+  z-index: -1;
+}
+
+.films__today__item.new p::before,
+.films__today__item.exclusive p::before,
+.films__today__item.available p::before{
+  content: "";
+  display: block;
+  position: absolute;
+
+  height: 50px;
+  width: 164px;
+  margin-left: -2px;
+  margin-top: -259px;
+
+  background-color: var(--color-background-main);
+  border-radius: 10px;
+
+  /* Опустить под обложку фильма */
+  z-index: -1;
+}
+
+
+.films__today__card{
+  width: 160px;
+  height: 240px;
+}
+
+
 .films__today__card--empty{
   width: 160px;
   height: 240px;
-  background-color: #2E2F38;
-  border: 2px dotted;
-  border-color: #DFDDDD;
+  background-color: var(--color-text-darker);
+  border: 2px var(--color-white) dotted;
   border-radius: 10px;
+  transition: border .3s linear;
 
   display: flex;
   flex-wrap: wrap;
@@ -243,9 +415,14 @@ header{
   align-content: center;
   text-align: center;
 }
+.films__today__card--empty:hover{
+  border: 2px var(--color-yellow) dotted;
+}
+
 .films__today__card--empty img{
   width: 50px;
   height: auto;
+  filter: var(--svgColor-yellow);
 }
 .films__today__card--empty p{
   width: 100px;
@@ -257,6 +434,7 @@ header{
 
 footer{
   padding-top: 50px;
+  background-color: var(--color-black);
 }
 
 .films__footer{
@@ -271,14 +449,19 @@ footer{
   padding-bottom: 20px;
 }
 
-.footer__item a:hover{
-  filter: brightness(0) saturate(100%) invert(64%) sepia(73%) saturate(428%) hue-rotate(1deg) brightness(107%) contrast(98%);
-  text-decoration: underline;
-}
-
 .footer__item{
   padding-bottom: 10px;
 }
+
+.footer__item a{
+  color: var(--color-text-dark);
+}
+.footer__item a:hover{
+  color: var(--color-yellow);
+  /* text-decoration: underline; */
+}
+
+
 
 .footer__list{
   margin-bottom: 40px;
@@ -289,3 +472,22 @@ footer{
   flex-wrap: wrap;
   flex-direction: row;
 }
+
+
+/* Большинство 0, исключения 35 */
+.footer__item{
+  padding-left: 0;
+}
+.footer__item--padfix{
+  padding-left: 25px;
+}
+
+.footer__icon img{
+  width: 25px;
+  height: auto;
+  filter: var(--svgColor-dark);
+}
+
+/* .footer__icon img:hover{
+  filter: var(--svgColor-yellow);
+} */
