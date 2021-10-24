@@ -1,0 +1,181 @@
+/* --------------- Секция Слайдер --------------- */
+.slider {
+  width: 500px;
+  height: 300px;
+  background-color: var(--color-text-bright);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  text-align: center;
+  overflow: hidden;
+}
+.slider__imageContainer {
+  width: 1500px;
+  background-color: var(--color-text-bright);
+  height: 300px;
+  clear: both;
+  position: relative;
+  -webkit-transition: left 2s;
+  -moz-transition: left 2s;
+  -o-transition: left 2s;
+  transition: left 2s;
+}
+.slide {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+}
+#slide-1:target ~ .slider__imageContainer {
+  left: 0px;
+}
+#slide-2:target ~ .slider__imageContainer {
+  left: -500px;
+}
+#slide-3:target ~ .slider__imageContainer {
+  left: -1000px;
+}
+.slider__buttons {
+  position: relative;
+  top: -20px;
+}
+.slider__buttons a {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background-color: var(--color-text-bright);
+}
+/* !!! ОТКЛЮЧЕН !!! */
+.slider{
+  display: none;
+}
+
+/* --------------- Секция Фильмы --------------- */
+.filmCards__list{
+  align-items: flex-start;
+}
+/* --------------- Стандартная Карточка фильма --------------- */
+.filmCard{
+  margin: 30px 0;
+  border-radius: 10px;
+  z-index: 1;
+}
+.filmCard p{
+  padding-top: 10px;
+  width: 160px;
+}
+.filmCard img{
+  width: 160px;
+  height: 240px;
+
+  outline: solid var(--color-yellow) 0px;
+  outline-offset: 3px;
+  transition: outline .04s linear;
+  border-radius: 10px;
+}
+/* Ярлычки над обложками */
+.filmCard.new::before{
+  content: "Новинка";
+
+  display: block;
+  position: absolute;
+
+  height: 50px;
+  width: 160px;
+  margin-top: -27px;
+  padding: 2px 0;
+
+  text-align: center;
+  background-color: var(--color-orange);
+  border-radius: 10px;
+  color: var(--color-text-darkest);
+  font-weight: 700;
+
+  z-index: -1;
+}
+.filmCard.exclusive::before{
+  content: "Эксклюзив";
+  display: block;
+  position: absolute;
+
+  height: 50px;
+  width: 160px;
+  margin-top: -27px;
+  padding: 2px 0;
+
+  text-align: center;
+  background-color: var(--color-orange);
+  border-radius: 10px;
+  color: var(--color-text-darkest);
+  font-weight: 700;
+
+  z-index: -1;
+}
+.filmCard.available::before{
+  content: "В продаже";
+  display: block;
+  position: absolute;
+
+  height: 50px;
+  width: 160px;
+  margin-top: -27px;
+  padding: 2px 0;
+
+  text-align: center;
+  background-color: var(--color-orange);
+  border-radius: 10px;
+  color: var(--color-text-darkest);
+  font-weight: 700;
+
+  z-index: -1;
+}
+.filmCard.new p::before,
+.filmCard.exclusive p::before,
+.filmCard.available p::before{
+  content: "";
+  display: block;
+  position: absolute;
+
+  height: 50px;
+  width: 164px;
+  margin-left: -2px;
+  margin-top: -259px;
+
+  background-color: var(--color-background-main);
+  border-radius: 10px;
+
+  z-index: -1;
+}
+/* Обводка вокруг карточек */
+.filmCard:hover div:not(.filmCard--empty) img{
+  outline: solid var(--color-yellow) 2px;
+}
+/* Пустая карточка */
+.filmCard--empty{
+  width: 160px;
+  height: 240px;
+  background-color: var(--color-text-darker);
+  border: 2px var(--color-white) dotted;
+  border-radius: 10px;
+  transition: border .3s linear;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+.filmCard--empty:hover{
+  border: 2px var(--color-yellow) dotted;
+}
+.filmCard--empty img{
+  width: 50px;
+  height: auto;
+  filter: var(--svgColor-yellow);
+}
+.filmCard--empty p{
+  width: 100px;
+}

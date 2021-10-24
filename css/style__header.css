@@ -1,0 +1,95 @@
+header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-foreground-main);
+}
+
+.header__sections,
+.header__logo,
+.header__menu__list,
+.header__social__list,
+.header__login{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* --------------- Лого сайта --------------- */
+.header__logo img{
+  width: 70px;
+  height: auto;
+  filter: var(--svgColor-yellow);
+}
+
+/* --------------- Список меню --------------- */
+.header__menu__item{
+  padding: 40px 0;
+  padding-left: 46px;
+  font-size: 20px;
+}
+.header__menu__list li:first-of-type{
+  padding-left: 0;
+}
+
+/* --------------- Список иконок --------------- */
+.header__social__list,
+.header__social__item,
+.header__social__icon,
+.header__social__icon div{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.header__social__list li{
+  padding-left: 25px;
+}
+/* Фикс паддинга */
+.header__social__list li:first-of-type{
+  padding-left: 0;
+}
+/* Ссылки-иконки, нижний слой */
+.header__social__icon img{
+  width: 20px;
+  height: auto;
+  filter: var(--svgColor-bright);
+}
+/* Ссылки-иконки, верхний слой */
+.header__social__icon div{
+  position: absolute;
+  background-color: var(--color-foreground-main);
+
+  opacity: 0%;
+  transition: opacity 0.3s linear;
+}
+.header__social__icon div img{
+  filter: var(--svgColor-yellow);
+}
+/* Ссылки-иконки при наведении */
+.header__social__icon div:hover{
+  opacity: 100%;
+}
+
+/* --------------- Кнопка/ссылка входа на сайт --------------- */
+.header__login{
+  font-size: 16px;
+}
+.header__login button{
+  width: fit-content;
+  height: fit-content;
+  padding-left: 20px;
+
+  background: none;
+  border: none;
+
+  display: flex;
+  cursor: pointer;
+}
+.header__login img{
+  width: 25px;
+  height: auto;
+  filter: var(--svgColor-yellow);
+}
