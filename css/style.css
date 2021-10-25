@@ -106,6 +106,12 @@ a:hover{
   margin: 0 auto;
 }
 
+/* Отступ между  секциями */
+.indent{
+  margin-bottom: 40px;
+}
+
+
 /* Фикс для хедера */
 main{
   margin-top: 102px;

@@ -1,5 +1,169 @@
 /* --------------- Секция Слайдер --------------- */
-.slider {
+.index__slider{
+  background-color: var(--color-black);
+}
+.index__slider > div{
+  align-items: stretch;
+  /* Высота видео + 6 */
+  min-height: 321px;
+}
+
+/* Превью видео */
+.index__slider-thumbnail{
+  position: absolute;
+
+  width: 560px;
+  height: 315px;
+
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  border: none;
+  border-radius: 10px;
+  background: none;
+
+  margin-bottom: 6px;
+}
+.index__slider-thumbnail img:first-of-type{
+  width: auto;
+  height: 100%;
+
+  transform: scale(1.05);
+  transition: transform 0.3s ease-out;
+  pointer-events: none;
+}
+.index__slider-thumbnail img:last-of-type{
+  position: absolute;
+  align-self: center;
+
+  width: auto;
+  height: 65px;
+  opacity: 0.5;
+
+  transform: scale(1);
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  filter: var(--svgColor-bright);
+  pointer-events: none;
+}
+.index__slider-thumbnail:hover{
+  cursor: pointer;
+}
+.index__slider-thumbnail:hover img:first-of-type{
+  transform: scale(1.085);
+}
+.index__slider-thumbnail:hover img:last-of-type{
+  transform: scale(0.95);
+  opacity: 1;
+}
+/* Чёрноё окно размером с превью и видео, чтобы замаскировать переход */
+.testBg{
+  position: absolute;
+
+  width: 560px;
+  height: 315px;
+
+  /* border: none; */
+  border-radius: 10px;
+  background-color: black;
+
+  display: none;
+}
+/* Встроенное видео YouTube */
+.index__slider-MovieVideo iframe{
+  position: absolute;
+
+  border: none;
+  border-radius: 10px;
+
+  display: none;
+}
+/* Инфо справа от видео */
+.index__slider-MovieInfo{
+  width: 500px;
+
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+
+  justify-content: space-around;
+}
+.index__slider-MovieInfo h1{
+  font-size: 30px;
+  /* padding-bottom: 20px; */
+  color: var(--color-text-brighter);
+}
+.index__slider-MovieInfo div{
+  height: 193px;
+  width: 100%;
+
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  line-height: 24px;
+  font-size: 16px;
+  color: var(--color-text-dark);
+}
+/* Кнопка */
+.index__slider-MovieBtn{
+  height: 40px;
+  width: 200px;
+
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+/* Анимированный бэкграунд кнопки */
+.index__slider-MovieBtn div{
+  height: 40px;
+  width: 400px;
+  margin-left: -200px;
+
+  background: linear-gradient(45deg, var(--color-orange) 0%, var(--color-yellow) 50%);
+  transition: margin-left .3s ease-out;
+
+  pointer-events: none;
+}
+/* Текст кнопки */
+.index__slider-MovieBtn button{
+  height: 40px;
+  width: 200px;
+
+  position: absolute;
+  margin-top: -40px;
+  padding: 10px;
+
+  background: none;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  color: var(--color-text-darkest);
+
+  pointer-events: none;
+}
+.index__slider-MovieBtn:hover{
+  cursor: pointer;
+}
+.index__slider-MovieBtn:hover > div{
+  margin-left: 0px;
+}
+
+
+
+
+
+
+
+
+/* .slider {
   width: 500px;
   height: 300px;
   background-color: var(--color-text-bright);
@@ -45,7 +209,7 @@
   width: 15px;
   border-radius: 50px;
   background-color: var(--color-text-bright);
-}
+} */
 /* !!! ОТКЛЮЧЕН !!! */
 .slider{
   display: none;
@@ -90,7 +254,7 @@
   background-color: var(--color-orange);
   border-radius: 10px;
   color: var(--color-text-darkest);
-  font-weight: 700;
+  font-weight: bold;
 
   z-index: -1;
 }
@@ -108,7 +272,7 @@
   background-color: var(--color-orange);
   border-radius: 10px;
   color: var(--color-text-darkest);
-  font-weight: 700;
+  font-weight: bold;
 
   z-index: -1;
 }
@@ -126,7 +290,7 @@
   background-color: var(--color-orange);
   border-radius: 10px;
   color: var(--color-text-darkest);
-  font-weight: 700;
+  font-weight: bold;
 
   z-index: -1;
 }

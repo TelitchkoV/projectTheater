@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" id="display-fix" style="display: none;">
 
 <head>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/style__index.css">
   <link rel="stylesheet" href="css/style__header.css">
   <link rel="stylesheet" href="css/style__footer.css">
+  <link rel="stylesheet" href="css/style__index.css">
+
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +21,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Кинотеатр Макет</title>
+
+  <!-- Не показывать страницу, пока идёт загрузка стилей -->
+  <link rel="stylesheet" href="css/display.css">
 </head>
 
 <body>
@@ -115,11 +119,34 @@
       </div>
     </section> -->
 
-    <section class="main__films">
+    <section class="index__main">
+
+      <section class="section section__wrapper index__slider indent">
+        <div class="section__wrapper container">
+          <div class="index__slider-MovieVideo">
+            <button id="index-slider-thumbnail" class="index__slider-thumbnail" type="button">
+              <img src="img/thumbnail/movie1.jpg" alt="">
+              <img src="img/play-button-svgrepo-com.svg" alt="">
+            </button>
+            <div id="testBg" class="testBg"></div>
+            <iframe id="index-slider-video" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="index__slider-MovieInfo">
+            <h1>Хороший, Плохой, Коп</h1>
+            <div>Обычно за преступниками приходится изрядно погоняться, чтобы закрыть их за решеткой.Но когда молодому офицеру полиции (Алексис Лаудер) без особого сопротивления сдается матерый аферист (Фрэнк Грилло), становится ясно, что к стражам закона его привело не искреннее раскаяние, а профессиональный киллер (Джерард Батлер), который идет по пятам авантюриста. Противостояние в духе «хороший, плохой, злой» от режиссера легендарного фильма «Козырные тузы» Джо Карнахана - это то, что любители жанра не видели уже очень-очень давно!</div>
+
+            <a class="index__slider-MovieBtn" href="#">
+              <div></div>
+              <button id="index-slider-moviePage" type="button" disabled>На страницу фильма</button>
+            </a>
+
+          </div>
+        </div>
+      </section>
 
       <section class="section container section__wrapper">
         <h1 class="section--heading">Сегодня в кино</h1>
-        <div class="filmCards__list section__wrapper">
+        <div class="section__wrapper filmCards__list">
           <a class="filmCard" href=""><div><img src="img/cover/cover1.jpg" alt=""><p>Веном 2</p></div></a>
           <a class="filmCard new" href=""><div><img src="img/cover/cover2.jpg" alt=""><p>Семейка Аддамс: Горящий тур</p></div></a>
           <a class="filmCard" href=""><div><img src="img/cover/cover3.jpg" alt=""><p>Не время умирать</p></div></a>
@@ -134,9 +161,10 @@
           <a class="filmCard" href=""><div class="filmCard--empty"><img src="img/plus-svgrepo-com.svg" alt=""><p>Больше фильмов</p></div></a>
         </div>
       </section>
+
       <section class="section container section__wrapper">
         <h1 class="section--heading">Скоро в кино</h1>
-        <div class="filmCards__list section__wrapper">
+        <div class="section__wrapper filmCards__list">
           <a class="filmCard exclusive" href=""><div><img src="img/cover/cover5.png" alt=""><p>Гладиатор</p></div></a>
           <a class="filmCard" href=""><div><img src="img/cover/cover6.jpg" alt=""><p>Возвращение</p></div></a>
           <a class="filmCard available" href=""><div><img src="img/cover/cover7.jpg" alt=""><p>Кощей. Начало</p></div></a>
