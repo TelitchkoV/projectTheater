@@ -13,7 +13,7 @@ var indexSliderVideoID_list = new Array(
 function getVideoID() {
   return indexSliderVideoID_list[indexSliderVideoID_counter];
 }
-document.getElementById("index-slider-video").src ="https://www.youtube.com/embed/" + getVideoID() + "?autoplay=1&rel=0&showinfo=0&modestbranding=1";
+document.getElementById("index-slider-video").src ="";
 
 
 
@@ -24,4 +24,5 @@ btnIndexSliderThumbnail.addEventListener("click", function () {
   document.getElementById("testBg").style.display = "block";
   btnIndexSliderThumbnail.style.display = "none";
   document.getElementById("index-slider-video").style.display = "block";
+  document.getElementById("index-slider-video").src ="https://www.youtube.com/embed/" + getVideoID() + "?autoplay=1&rel=0&showinfo=0&modestbranding=1";
 });
