@@ -2,7 +2,7 @@
 .index__slider{
   background-color: var(--color-black);
 }
-.index__slider > div{
+.index__slider > div:not(.index__sliderButtons){
   align-items: stretch;
   /* Высота видео + 6 */
   min-height: 321px;
@@ -26,6 +26,8 @@
   margin-bottom: 6px;
 }
 .index__slider-thumbnail img:first-of-type{
+
+  /* Меняются, в зависимости от соотношения сторон картинки */
   width: auto;
   height: 100%;
 
@@ -57,7 +59,7 @@
   opacity: 1;
 }
 /* Чёрноё окно размером с превью и видео, чтобы замаскировать переход */
-.testBg{
+.index__slider-bg{
   position: absolute;
 
   width: 560px;
@@ -67,10 +69,10 @@
   border-radius: 10px;
   background-color: black;
 
-  display: none;
+  /* display: none; */
 }
 /* Встроенное видео YouTube */
-.index__slider-MovieVideo iframe{
+.index__slider-FilmVideo iframe{
   position: absolute;
 
   border: none;
@@ -79,7 +81,7 @@
   display: none;
 }
 /* Инфо справа от видео */
-.index__slider-MovieInfo{
+.index__slider-FilmInfo{
   width: 500px;
 
   text-align: left;
@@ -92,12 +94,12 @@
 
   justify-content: space-around;
 }
-.index__slider-MovieInfo h1{
+.index__slider-FilmInfo h1{
   font-size: 30px;
   /* padding-bottom: 20px; */
   color: var(--color-text-brighter);
 }
-.index__slider-MovieInfo div{
+.index__slider-FilmInfo div{
   height: 193px;
   width: 100%;
 
@@ -113,7 +115,7 @@
   color: var(--color-text-dark);
 }
 /* Кнопка */
-.index__slider-MovieBtn{
+.index__slider-FilmBtn{
   height: 40px;
   width: 200px;
 
@@ -122,18 +124,18 @@
   overflow: hidden;
 }
 /* Анимированный бэкграунд кнопки */
-.index__slider-MovieBtn div{
+.index__slider-FilmBtn div{
   height: 40px;
   width: 400px;
   margin-left: -200px;
 
   background: linear-gradient(45deg, var(--color-orange) 0%, var(--color-yellow) 50%);
-  transition: margin-left .3s ease-out;
+  transition: margin-left 0.3s ease-out;
 
   pointer-events: none;
 }
 /* Текст кнопки */
-.index__slider-MovieBtn button{
+.index__slider-FilmBtn button{
   height: 40px;
   width: 200px;
 
@@ -149,12 +151,63 @@
 
   pointer-events: none;
 }
-.index__slider-MovieBtn:hover{
+.index__slider-FilmBtn:hover{
   cursor: pointer;
 }
-.index__slider-MovieBtn:hover > div{
+.index__slider-FilmBtn:hover > div{
   margin-left: 0px;
 }
+
+
+
+
+
+
+
+
+/* Кнопки переключения фильмов */
+.index__sliderButtons{
+  align-content: center;
+  justify-content: space-around;
+
+  min-height: fit-content;
+
+  padding-top: 34px;
+}
+.index__sliderButtons button{
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  background: none;
+
+  padding: 15px 15px;
+}
+
+.index__sliderButtons button div{
+  width: 100px;
+  height: 6px;
+
+  border-radius: 10px;
+  background-color: var(--color-text-dark);
+
+  transition: background-color 0.3s linear;
+
+  pointer-events: none;
+}
+
+.index__sliderButtons button:hover:not(.pressed){
+  cursor: pointer;
+}
+
+.index__sliderButtons button.pressed div{
+  background-color: var(--color-yellow);
+}
+
+.index__sliderButtons button:hover div{
+  background-color: var(--color-yellow);
+}
+
+
 
 
 
@@ -235,7 +288,7 @@
 
   outline: solid var(--color-yellow) 0px;
   outline-offset: 3px;
-  transition: outline .04s linear;
+  transition: outline 0.04s linear;
   border-radius: 10px;
 }
 /* Ярлычки над обложками */
@@ -322,7 +375,7 @@
   background-color: var(--color-text-darker);
   border: 2px var(--color-white) dotted;
   border-radius: 10px;
-  transition: border .3s linear;
+  transition: border 0.3s linear;
 
   display: flex;
   flex-wrap: wrap;

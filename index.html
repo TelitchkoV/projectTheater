@@ -104,11 +104,11 @@
         <span id="slide-2"></span>
         <span id="slide-3"></span>
         <div class="slider__imageContainer">
-          <img src="https://s3.kinoteatr.ru/preview/upload/movies/7358/cover.jpg" class="slide" width="500"
+          <img src="https://s3.kinoteatr.ru/preview/upload/Films/7358/cover.jpg" class="slide" width="500"
             height="300" />
-          <img src="https://s3.kinoteatr.ru/preview/upload/movies/7388/cover.jpg" class="slide" width="500"
+          <img src="https://s3.kinoteatr.ru/preview/upload/Films/7388/cover.jpg" class="slide" width="500"
             height="300" />
-          <img src="https://s3.kinoteatr.ru/preview/upload/movies/7311/cover.jpg" class="slide" width="500"
+          <img src="https://s3.kinoteatr.ru/preview/upload/Films/7311/cover.jpg" class="slide" width="500"
             height="300" />
         </div>
         <div class="slider__buttons">
@@ -123,24 +123,31 @@
 
       <section class="section section__wrapper index__slider indent">
         <div class="section__wrapper container">
-          <div class="index__slider-MovieVideo">
+          <div class="index__slider-FilmVideo">
+            <div id="index-slider-bg" class="index__slider-bg"></div>
             <button id="index-slider-thumbnail" class="index__slider-thumbnail" type="button">
-              <img src="img/thumbnail/movie1.jpg" alt="">
+              <img id="index-slider-thumbnailImage" src="" alt="">
               <img src="img/play-button-svgrepo-com.svg" alt="">
             </button>
-            <div id="testBg" class="testBg"></div>
             <iframe id="index-slider-video" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
-          <div class="index__slider-MovieInfo">
-            <h1>Хороший, Плохой, Коп</h1>
-            <div>Обычно за преступниками приходится изрядно погоняться, чтобы закрыть их за решеткой.Но когда молодому офицеру полиции (Алексис Лаудер) без особого сопротивления сдается матерый аферист (Фрэнк Грилло), становится ясно, что к стражам закона его привело не искреннее раскаяние, а профессиональный киллер (Джерард Батлер), который идет по пятам авантюриста. Противостояние в духе «хороший, плохой, злой» от режиссера легендарного фильма «Козырные тузы» Джо Карнахана - это то, что любители жанра не видели уже очень-очень давно!</div>
-
-            <a class="index__slider-MovieBtn" href="#">
+          <div class="index__slider-FilmInfo">
+            <h1 id="index__slider-FilmName"></h1>
+            <div id="index__slider-FilmDesc"></div>
+            <a class="index__slider-FilmBtn" href="">
               <div></div>
-              <button id="index-slider-moviePage" type="button" disabled>На страницу фильма</button>
+              <button id="index-slider-FilmPage" type="button" disabled>На страницу фильма</button>
             </a>
 
           </div>
+        </div>
+        <div class="section__wrapper container index__sliderButtons">
+          <button type="button" class="index-slider-btn pressed"><div></div></button>
+          <button type="button" class="index-slider-btn"><div></div></button>
+          <button type="button" class="index-slider-btn"><div></div></button>
+          <button type="button" class="index-slider-btn"><div></div></button>
+          <button type="button" class="index-slider-btn"><div></div></button>
+          <button type="button" class="index-slider-btn"><div></div></button>
         </div>
       </section>
 
