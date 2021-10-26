@@ -2,12 +2,36 @@
 .index__slider{
   background-color: var(--color-black);
 }
-.index__slider > div:not(.index__sliderButtons){
+/* Переход между фильмами */
+.index__slider-ChangeZone{
+  position: absolute;
+
   align-items: stretch;
   /* Высота видео + 6 */
   min-height: 321px;
-}
+  min-width: 1110px;
 
+  pointer-events: none;
+  opacity: 0%;
+  transition: opacity 0.3s linear;
+}
+.index__slider-ChangeZone.active{
+  opacity: 100%;
+  pointer-events: all;
+}
+.index__slider-container{
+  min-height: 321px;
+  min-width: 1110px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
 /* Превью видео */
 .index__slider-thumbnail{
   position: absolute;
@@ -157,14 +181,6 @@
 .index__slider-FilmBtn:hover > div{
   margin-left: 0px;
 }
-
-
-
-
-
-
-
-
 /* Кнопки переключения фильмов */
 .index__sliderButtons{
   align-content: center;
@@ -182,7 +198,6 @@
 
   padding: 15px 15px;
 }
-
 .index__sliderButtons button div{
   width: 100px;
   height: 6px;
@@ -194,80 +209,15 @@
 
   pointer-events: none;
 }
-
 .index__sliderButtons button:hover:not(.pressed){
   cursor: pointer;
 }
-
 .index__sliderButtons button.pressed div{
   background-color: var(--color-yellow);
 }
-
 .index__sliderButtons button:hover div{
   background-color: var(--color-yellow);
 }
-
-
-
-
-
-
-
-
-
-
-/* .slider {
-  width: 500px;
-  height: 300px;
-  background-color: var(--color-text-bright);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0px;
-  text-align: center;
-  overflow: hidden;
-}
-.slider__imageContainer {
-  width: 1500px;
-  background-color: var(--color-text-bright);
-  height: 300px;
-  clear: both;
-  position: relative;
-  -webkit-transition: left 2s;
-  -moz-transition: left 2s;
-  -o-transition: left 2s;
-  transition: left 2s;
-}
-.slide {
-  float: left;
-  margin: 0px;
-  padding: 0px;
-  position: relative;
-}
-#slide-1:target ~ .slider__imageContainer {
-  left: 0px;
-}
-#slide-2:target ~ .slider__imageContainer {
-  left: -500px;
-}
-#slide-3:target ~ .slider__imageContainer {
-  left: -1000px;
-}
-.slider__buttons {
-  position: relative;
-  top: -20px;
-}
-.slider__buttons a {
-  display: inline-block;
-  height: 15px;
-  width: 15px;
-  border-radius: 50px;
-  background-color: var(--color-text-bright);
-} */
-/* !!! ОТКЛЮЧЕН !!! */
-.slider{
-  display: none;
-}
-
 /* --------------- Секция Фильмы --------------- */
 .filmCards__list{
   align-items: flex-start;

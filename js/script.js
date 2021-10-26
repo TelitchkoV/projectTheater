@@ -1,8 +1,9 @@
-
-/*----------------- Будущий переключатель видео -----------------*/
+/*----------------- Слайдер видео -----------------*/
 
 // Дефолтный фильм для отображения
-var indexSliderFilm_counter = 0;
+var indexSliderFilm_index = 0;
+// Дефолтный фильм для отображения
+var IsVideoOpenIndex = false;
 
 // Как будто база данных фильмов: YouTubeID / Название / Описание
 var indexSliderFilms = new Array(
@@ -14,104 +15,117 @@ var indexSliderFilms = new Array(
   new Array("PJX6a06gnEY", "Не время умирать", "Бонд оставил оперативную службу и наслаждается спокойной жизнью на Ямайке. Все меняется, когда на островепоявляется его старый друг Феликс Лейтер из ЦРУ с просьбой о помощи. Миссия по спасению похищенного ученого оказывается опаснее, чем предполагалось изначально. Бонд попадает в ловушку к таинственному злодею, который владеет уникальным технологическим оружием." )
 );
 
-// var indexThumbnailImage = new Image();
-
-// function PreloadIndexThumbnailImage() {
-//   indexThumbnailImage.src = "img/thumbnail/film" + indexSliderFilm_counter + ".jpg";
-//   indexThumbnailImage.onload = function()
-//   {
-//     var imgT = document.getElementById("index-slider-thumbnailImage");
-//     if (this.naturalWidth / this.naturalHeight > 1280 / 720)
-//     {
-//     imgT.style.width = "auto";
-//     imgT.style.height = "100%";
-//     }
-//     else
-//     {
-//     imgT.style.width = "100%";
-//     imgT.style.height = "auto";
-//     }
-//   }
-// }
 
 
 
-function UpdateIndexSliderFilm(){
-  // Проверка соотношения сторон превью
-  var newimage = new Image();
-  newimage.src = "img/thumbnail/film" + indexSliderFilm_counter + ".jpg";
-  newimage.onload = function()
-  {
-    var imgT = document.getElementById("index-slider-thumbnailImage");
-    if (this.naturalWidth / this.naturalHeight > 1280 / 720)
-    {
-    imgT.style.width = "auto";
-    imgT.style.height = "100%";
-    }
-    else
-    {
-    imgT.style.width = "100%";
-    imgT.style.height = "auto";
-    }
+// Клонировать пустую карту фильма 5 раз
+CopyPasteIndex();
+// Заполнить копии контентом
+FillFilmsIndex();
+// Создать кнопки переключения видео
+CreateSliderButtonsIndex();
+// Создать кнопки превью видео
+CreateSliderButtonsThumbnail();
+
+
+
+
+
+
+
+function CopyPasteIndex(){
+  var divToCopy = document.getElementById("index-slider-ChangeZone");
+  for (let i = 0; i < 5; i++) {
+    var newDiv = divToCopy.cloneNode(true);
+    newDiv.id += i + 1;
+    newDiv.classList.add(i + 1);
+    divToCopy.parentNode.appendChild(newDiv);
   }
+  divToCopy.id += 0;
+  divToCopy.classList.add("0");
+  divToCopy.classList.add("active");
+  // Переместить кнопки переключения в конец
+  // divToCopy.parentNode.appendChild(document.getElementById("index-sliderButtons").cloneNode(true));
+  // document.getElementById("index-sliderButtons").remove();
+}
+
+function FillFilmsIndex(){
+  var listThumbnailImages = document.getElementsByClassName("index__slider-thumbnailImage");
+  var listFilmName = document.getElementsByClassName("index__slider-FilmName");
+  var listFilmDesc = document.getElementsByClassName("index__slider-FilmDesc");
+
   // Обновить превью
-  document.getElementById("index-slider-thumbnailImage").src = "img/thumbnail/film" + indexSliderFilm_counter + ".jpg";
-  // Обновить название
-  document.getElementById("index__slider-FilmName").innerHTML = indexSliderFilms[indexSliderFilm_counter][1];
-  // Обновить описание
-  document.getElementById("index__slider-FilmDesc").innerHTML = indexSliderFilms[indexSliderFilm_counter][2];
-  // Обновить кнопки переключения видео
+  for (let i = 0; i < 6; i++) {
+    listThumbnailImages[i].src = "img/thumbnail/film" + i + ".jpg";
+    listThumbnailImages[i].onload = function()
+    {
+      // Проверка соотношения сторон превью
+      // Вместить превью в формат 16:9
+      if (this.naturalWidth / this.naturalHeight > 1280 / 720)
+      {
+        listThumbnailImages[i].style.width = "auto";
+        listThumbnailImages[i].style.height = "100%";
+      }
+      else
+      {
+        listThumbnailImages[i].style.width = "100%";
+        listThumbnailImages[i].style.height = "auto";
+      }
+    }
+    // Обновить название
+    listFilmName[i].innerHTML = indexSliderFilms[i][1];
+    // Обновить описание
+    listFilmDesc[i].innerHTML = indexSliderFilms[i][2];
+  }
 
 }
-UpdateIndexSliderFilm();
 
-var IsIndexSliderVideo = false;
+function CreateSliderButtonsIndex(){
+  var listOfButtons = document.getElementsByClassName("index-slider-btn");
+  for (let i = 0; i < listOfButtons.length; i++) {
+    listOfButtons[i].addEventListener("click", function () {
+      if (!listOfButtons[i].classList.contains("pressed")) {
+        // Если видео плеер открыт, то выключить
+        if (IsVideoOpenIndex) {
+          // Остановить и скрыть включенное видео
+          var listOfPlayers = document.getElementsByClassName("index__slider-video");
+          listOfPlayers[indexSliderFilm_index].src = "";
+          listOfPlayers[indexSliderFilm_index].style.display = "none";
 
-function UpdateIndexSliderVideo(){
-  if (IsIndexSliderVideo) {
-    // Чёрный бг -> видимый
-    // document.getElementById("index-slider-bg").style.display = "block";
-    // Превью -> невидимое
-    btnIndexSliderThumbnail.style.display = "none";
-    // Видео плеер -> видимый
-    document.getElementById("index-slider-video").style.display = "block";
-    document.getElementById("index-slider-video").src ="https://www.youtube.com/embed/" + indexSliderFilms[indexSliderFilm_counter][0] + "?autoplay=1&rel=0&showinfo=0&modestbranding=1";
-  }
-  else
-  {
-    // Остановить и скрыть включенное видео
-    document.getElementById("index-slider-video").style.display = "none";
-    document.getElementById("index-slider-video").src ="";
-    // Превью -> видимое
-    btnIndexSliderThumbnail.style.display = "flex";
-    // Чёрный бг -> невидимый
-    // document.getElementById("index-slider-bg").style.display = "none";
-  }
-}
+          // Превью -> видимое
+          var listOfThumbnail = document.getElementsByClassName("index__slider-thumbnail");
+          listOfThumbnail[indexSliderFilm_index].style.display = "flex";
 
-/*----------------- Кнопки переключения видео -----------------*/
-const indexSliderBtns = document.getElementsByClassName("index-slider-btn");
-for (let i = 0; i < indexSliderBtns.length; i++) {
-  indexSliderBtns[i].addEventListener("click", function () {
-    if (!indexSliderBtns[i].classList.contains("pressed")) {
-      // Предзагрузить превью
-        IsIndexSliderVideo = false;
-        UpdateIndexSliderVideo();
+          IsVideoOpenIndex = false;
+        }
+
+        //Сменить активный фильм слайдера
+        var listOfFilmsSlider = document.getElementsByClassName("index__slider-ChangeZone");
+        listOfFilmsSlider[indexSliderFilm_index].classList.remove("active");
+        listOfFilmsSlider[i].classList.add("active");
 
         // Сменить нажатую кнопку
-        indexSliderBtns[indexSliderFilm_counter].classList.remove("pressed");
-        indexSliderBtns[i].classList.add("pressed");
+        listOfButtons[i].classList.add("pressed");
+        listOfButtons[indexSliderFilm_index].classList.remove("pressed");
 
-        indexSliderFilm_counter = i;
-        UpdateIndexSliderFilm();
-    }
-  });
+        indexSliderFilm_index = i;
+      }
+    });
+  }
 }
 
+function CreateSliderButtonsThumbnail(){
+  var listOfThumbnail = document.getElementsByClassName("index__slider-thumbnail");
+  for (let i = 0; i < listOfThumbnail.length; i++) {
+    listOfThumbnail[i].addEventListener("click", function () {
+      IsVideoOpenIndex = true;
+      // Превью -> невидимое
+      listOfThumbnail[i].style.display = "none";
+      // Видео плеер -> видимый
+      var listOfPlayers = document.getElementsByClassName("index__slider-video");
 
-/*----------------- Клик на превью видео -----------------*/
-const btnIndexSliderThumbnail = document.getElementById("index-slider-thumbnail");
-btnIndexSliderThumbnail.addEventListener("click", function () {
-  IsIndexSliderVideo = true;
-  UpdateIndexSliderVideo();
-});
+      listOfPlayers[i].src = "https://www.youtube.com/embed/" + indexSliderFilms[i][0] + "?autoplay=1&rel=0&showinfo=0&modestbranding=1";
+      listOfPlayers[i].style.display = "block";
+    });
+  }
+}
