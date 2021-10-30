@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Не отображать страницу, пока не загрузятся стили -->
 <html lang="ru" id="display-fix" style="display: none;">
 
 <head>
@@ -30,11 +31,13 @@
   <!-- -------------------- header -------------------- -->
   <header>
     <section class="container section__wrapper header__sections">
+      <!-- Лого Кинотеатра -->
       <div class="header__section">
         <a class="header__logo" href="">
           <img src="img/film-strip-svgrepo-com.svg" alt="Логотип">
         </a>
       </div>
+      <!-- Главное меню -->
       <div class="header__section">
         <ul class="header__menu__list">
           <li class="header__menu__item"><a href="">Фильмы</a></li>
@@ -43,12 +46,15 @@
           <li class="header__menu__item"><a href="">Акции</a></li>
         </ul>
       </div>
+      <!-- Соц иконки -->
       <div class="header__section">
         <ul class="header__social__list">
 
+          <!-- По два слоя на каждую иконку для анимации -->
           <li class="header__social__item">
             <a class="header__social__icon" href="">
               <img src="img/iconmonstr-vk-1.svg" alt="ВК">
+              <!-- Бекграунд, чтобы перекрыть нижний слой -->
               <div>
                 <img src="img/iconmonstr-vk-1.svg" alt="ВК">
               </div>
@@ -98,38 +104,57 @@
   <!-- -------------------- main -------------------- -->
   <main>
     <section class="index__main">
+      <!-- Секция - Слайдер -->
+      <section class="section section__wrapper index__slider indent-bottom">
 
-      <section class="section section__wrapper index__slider indent">
-        <div class="index__slider-container">
-          <div id="index-slider-ChangeZone" class="section__wrapper container index__slider-ChangeZone">
+        <!-- Контейнер карточек -->
+        <div id="index-slider-container" class="index__slider-container">
+          <!-- Пустая заготовка карточки для слайдера (клонировать) -->
+          <div id="index-slider-FilmCard" class="section__wrapper container index__slider-FilmCard">
+            <!-- Левая половина - проигрыватель -->
             <div class="index__slider-FilmVideo">
-              <div id="index-slider-bg" class="index__slider-bg"></div>
-              <button id="index-slider-thumbnail" class="index__slider-thumbnail" type="button">
-                <img id="index-slider-thumbnailImage" src="" alt="" class="index__slider-thumbnailImage">
+              <!-- Чёрный бекграунд под превью и видео -->
+              <div class="index__slider-bg"></div>
+              <button class="index__slider-thumbnail" type="button">
+                <img src="" alt="" class="index__slider-thumbnailImage">
                 <img src="img/play-button-svgrepo-com.svg" alt="">
               </button>
-              <iframe class="index__slider-video" id="index-slider-video" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <!-- Проигрыватель YouTube -->
+              <iframe class="index__slider-video" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+            <!-- Правая половина - инфо -->
             <div class="index__slider-FilmInfo">
-              <h1 id="index__slider-FilmName" class="index__slider-FilmName"></h1>
-              <div id="index__slider-FilmDesc" class="index__slider-FilmDesc"></div>
+              <h1 class="index__slider-FilmName"></h1>
+              <div class="index__slider-FilmDesc"></div>
+              <!-- Кнопка "На страницу фильма" - НЕВИДИМАЯ, нужна для координат -->
               <a class="index__slider-FilmBtn" href="">
+                <!-- Анимированный бекграунд градиент -->
                 <div></div>
-                <button id="index-slider-FilmPage" type="button" disabled>На страницу фильма</button>
+                <!-- Кнопка, но только текст -->
+                <button type="button" disabled>На страницу фильма</button>
               </a>
             </div>
           </div>
         </div>
-        <div id="index-sliderButtons" class="section__wrapper container index__sliderButtons">
-          <button type="button" class="index-slider-btn pressed"><div></div></button>
-          <button type="button" class="index-slider-btn"><div></div></button>
-          <button type="button" class="index-slider-btn"><div></div></button>
-          <button type="button" class="index-slider-btn"><div></div></button>
-          <button type="button" class="index-slider-btn"><div></div></button>
-          <button type="button" class="index-slider-btn"><div></div></button>
+
+        <!-- Кнопка "На страницу фильма" - видимая, общая -->
+        <div class="section__wrapper container index__slider-FilmBtn--fix">
+          <div>
+            <a id="index__slider-FilmBtnPrime" class="index__slider-FilmBtn prime" href="">
+              <div></div>
+              <button type="button" disabled>На страницу фильма</button>
+            </a>
+          </div>
         </div>
+
+        <!-- Кнопки слайдера (клонировать) -->
+        <div class="section__wrapper container index__sliderButtons">
+          <button id="index-slider-btn" type="button" class="index__slider-btn"><div></div></button>
+        </div>
+
       </section>
 
+      <!-- Секция - Сегодня в кино -->
       <section class="section container section__wrapper">
         <h1 class="section--heading">Сегодня в кино</h1>
         <div class="section__wrapper filmCards__list">
@@ -148,6 +173,7 @@
         </div>
       </section>
 
+      <!-- Секция - Скоро в кино -->
       <section class="section container section__wrapper">
         <h1 class="section--heading">Скоро в кино</h1>
         <div class="section__wrapper filmCards__list">

@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  background-color: var(--color-foreground-main);
 }
 *, *::before, *::after {
   box-sizing: inherit;
@@ -106,8 +107,12 @@ a:hover{
   margin: 0 auto;
 }
 
-/* Отступ между  секциями */
-.indent{
+/* Отступ между секциями вверх */
+.indent-top{
+  margin-top: 40px;
+}
+/* Отступ между секциями вниз */
+.indent-bottom{
   margin-bottom: 40px;
 }
 

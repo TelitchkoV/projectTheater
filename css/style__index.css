@@ -1,9 +1,13 @@
 /* --------------- Секция Слайдер --------------- */
 .index__slider{
   background-color: var(--color-black);
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 /* Переход между фильмами */
-.index__slider-ChangeZone{
+.index__slider-FilmCard{
   position: absolute;
 
   align-items: stretch;
@@ -15,7 +19,7 @@
   opacity: 0%;
   transition: opacity 0.3s linear;
 }
-.index__slider-ChangeZone.active{
+.index__slider-FilmCard.active{
   opacity: 100%;
   pointer-events: all;
 }
@@ -116,15 +120,15 @@
   align-items: flex-start;
   align-content: flex-start;
 
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 .index__slider-FilmInfo h1{
   font-size: 30px;
   /* padding-bottom: 20px; */
   color: var(--color-text-brighter);
+  margin-bottom: 20px;
 }
 .index__slider-FilmInfo div{
-  height: 193px;
   width: 100%;
 
   -webkit-box-orient: vertical;
@@ -137,6 +141,7 @@
   line-height: 24px;
   font-size: 16px;
   color: var(--color-text-dark);
+
 }
 /* Кнопка */
 .index__slider-FilmBtn{
@@ -146,6 +151,13 @@
   border: none;
   border-radius: 10px;
   overflow: hidden;
+
+  margin: 41px 0 6px;
+
+  /* Невидимая, нужна для собирания координат
+  и удержания размера блока */
+  opacity: 0%;
+  pointer-events: none;
 }
 /* Анимированный бэкграунд кнопки */
 .index__slider-FilmBtn div{
@@ -153,7 +165,7 @@
   width: 400px;
   margin-left: -200px;
 
-  background: linear-gradient(45deg, var(--color-orange) 0%, var(--color-yellow) 50%);
+  background: linear-gradient(45deg, var(--color-orange) 5%, var(--color-yellow) 45%);
   transition: margin-left 0.3s ease-out;
 
   pointer-events: none;
@@ -181,10 +193,37 @@
 .index__slider-FilmBtn:hover > div{
   margin-left: 0px;
 }
+/* Главная видимая кнопка,
+ловит координаты невидимых */
+.index__slider-FilmBtn.prime{
+  position: absolute;
+  transition:
+    top 0.3s ease-out,
+    left 0.3s ease-out,
+    opacity 0.3s linear;
+  margin: 0;
+  padding: 0;
+
+  /* opacity: 100%; */
+  pointer-events: auto;
+}
+/* Фикс для изменения положения абсолюта
+по ширине при смене размера окна */
+.index__slider-FilmBtn--fix{
+  flex-direction: column;
+  min-height: 0;
+  height: 0;
+}
+.index__slider-FilmBtn--fix > div{
+  width: 500px;
+  height: 0;
+  align-self: flex-end;
+  position: relative;
+}
 /* Кнопки переключения фильмов */
 .index__sliderButtons{
   align-content: center;
-  justify-content: space-around;
+  justify-content: center;
 
   min-height: fit-content;
 
@@ -196,10 +235,10 @@
   border: none;
   background: none;
 
-  padding: 15px 15px;
+  padding: 15px;
 }
 .index__sliderButtons button div{
-  width: 100px;
+  width: 80px;
   height: 6px;
 
   border-radius: 10px;
