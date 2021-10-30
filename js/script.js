@@ -29,6 +29,11 @@ Index__GetActiveButtonPosition();
 
 
 
+// Задержка отображения, чтобы сайт прогрузился
+setTimeout(function() {
+  var mainHTML = document.getElementById("display-fix");
+  mainHTML.style.opacity = "100%";
+}, 300);
 
 
 
@@ -161,6 +166,7 @@ function Index__GetActiveButtonPosition(){
   // btnPrime.style.left = btnActive.left  + window.scrollX + "px";
   btnPrime.style.opacity = "100%";
 }
+
 
 
 

@@ -196,6 +196,9 @@
 /* Главная видимая кнопка,
 ловит координаты невидимых */
 .index__slider-FilmBtn.prime{
+  /* Фикс - иногда кнопка не отображается
+  при первой загрузке страницы */
+  top: -46px;
   position: absolute;
   transition:
     top 0.3s ease-out,
