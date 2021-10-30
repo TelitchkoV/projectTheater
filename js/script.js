@@ -30,10 +30,10 @@ Index__GetActiveButtonPosition();
 
 
 // Задержка отображения, чтобы сайт прогрузился
-setTimeout(function() {
-  var mainHTML = document.getElementById("display-fix");
-  mainHTML.style.opacity = "100%";
-}, 300);
+// setTimeout(function() {
+//   var mainHTML = document.getElementById("display-fix");
+//   mainHTML.style.opacity = "100%";
+// }, 300);
 
 
 
@@ -162,7 +162,9 @@ function Index__GetActiveButtonPosition(){
   var btnActive = btnList[Index__SliderFilm_i].getBoundingClientRect();
 
   var btnPrime = document.getElementById("index__slider-FilmBtnPrime");
-  btnPrime.style.top = btnActive.top + window.scrollY - 463 + "px";
+  if (btnActive.top + window.scrollY > 0) btnPrime.style.top = btnActive.top + window.scrollY - 463 + "px";
+  else btnPrime.style.top = "-46px";
+
   // btnPrime.style.left = btnActive.left  + window.scrollX + "px";
   btnPrime.style.opacity = "100%";
 }
