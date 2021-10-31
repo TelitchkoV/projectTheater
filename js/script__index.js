@@ -25,7 +25,7 @@ Index__SliderCreateButtons();
 // Создать кнопки превью видео
 Index__SliderCreateThumbnailButtons();
 // Позиция кнопки активного фильма слайдера
-Index__GetActiveButtonPosition();
+Index__GetActiveButtonPosition(true);
 
 
 
@@ -75,7 +75,7 @@ function Index__SliderFillFilmCards(){
     // Обновить описание
     listFilmDesc[i].innerHTML = Index__SliderFilms[i][2];
     // Фикс - иногда кнопка фильмов слайдера загружается немного выше, чем надо
-    Index__GetActiveButtonPosition();
+    // Index__GetActiveButtonPosition();
   }
 
 }
@@ -148,13 +148,18 @@ function Index__SliderCreateThumbnailButtons(){
   }
 };
 
-function Index__GetActiveButtonPosition(){
+function Index__GetActiveButtonPosition(firstLoad){
   var btnList = document.querySelectorAll(".index__slider-FilmBtn:not(.prime)");
   var btnActive = btnList[Index__SliderFilm_i].getBoundingClientRect();
 
   var btnPrime = document.getElementById("index__slider-FilmBtnPrime");
-  if (btnActive.top + window.scrollY > 0) btnPrime.style.top = btnActive.top + window.scrollY - 463 + "px";
-  // else btnPrime.style.top = "-46px";
+
+
+  if (!firstLoad) {
+    if (btnActive.top + window.scrollY > 0) btnPrime.style.top = btnActive.top + window.scrollY - 463 + "px";
+    else btnPrime.style.top = "-46px";
+  }
+  else btnPrime.style.top = "-46px";
 
   // btnPrime.style.left = btnActive.left  + window.scrollX + "px";
   btnPrime.style.opacity = "100%";
