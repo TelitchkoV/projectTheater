@@ -13,8 +13,8 @@
   height: 228px;
   overflow: hidden;
 
-  transform: scale(1);
-  transition: transform 0.3s ease-out;
+  /* transform: scale(1);
+  transition: transform 0.3s ease-out; */
 
   border: none;
   border-radius: 10px;
@@ -34,9 +34,16 @@
 .discount__card.empty{
   pointer-events: none;
 }
-.discount__card:hover div{
+/* .discount__card:hover div{
   transform: scale(1.03);
-}
+} */
 .discount__card:hover .discount__cardName{
   color: var(--color-yellow);
+}
+.discount__cardImg{
+  transform: scale(1);
+  transition: transform 0.3s ease-out;
+}
+.discount__card:hover .discount__cardImg{
+  transform: scale(1.03);
 }
