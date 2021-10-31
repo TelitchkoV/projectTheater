@@ -7,14 +7,14 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/style__header.css">
   <link rel="stylesheet" href="css/style__footer.css">
-  <link rel="stylesheet" href="css/style__index.css">
+  <link rel="stylesheet" href="css/style__discount.css">
 
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <script type="text/javascript" defer src="js/script.js"></script>
-  <script type="text/javascript" defer src="js/script__index.js"></script>
+  <script type="text/javascript" defer src="js/script__discount.js"></script>
 
   <!-- Шрифт Open Sans -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -104,89 +104,19 @@
   </header>
   <!-- -------------------- main -------------------- -->
   <main>
-    <section class="index__main">
-      <!-- Секция - Слайдер -->
-      <section class="section section__wrapper index__slider indent-bottom">
-
-        <!-- Контейнер карточек -->
-        <div id="index-slider-container" class="index__slider-container">
-          <!-- Пустая заготовка карточки для слайдера (клонировать) -->
-          <div id="index-slider-FilmCard" class="section__wrapper container index__slider-FilmCard">
-            <!-- Левая половина - проигрыватель -->
-            <div class="index__slider-FilmVideo">
-              <!-- Чёрный бекграунд под превью и видео -->
-              <div class="index__slider-bg"></div>
-              <button class="index__slider-thumbnail" type="button">
-                <img src="" alt="" class="index__slider-thumbnailImage">
-                <img src="img/play-button-svgrepo-com.svg" alt="">
-              </button>
-              <!-- Проигрыватель YouTube -->
-              <iframe class="index__slider-video" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <!-- Правая половина - инфо -->
-            <div class="index__slider-FilmInfo">
-              <h1 class="index__slider-FilmName"></h1>
-              <div class="index__slider-FilmDesc"></div>
-              <!-- Кнопка "На страницу фильма" - НЕВИДИМАЯ, нужна для координат -->
-              <a class="index__slider-FilmBtn" href="">
-                <!-- Анимированный бекграунд градиент -->
-                <div></div>
-                <!-- Кнопка, но только текст -->
-                <button type="button" disabled>На страницу фильма</button>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Кнопка "На страницу фильма" - видимая, общая -->
-        <div class="section__wrapper container index__slider-FilmBtn--fix">
-          <div>
-            <a id="index__slider-FilmBtnPrime" class="index__slider-FilmBtn prime" href="">
-              <div></div>
-              <button type="button" disabled>На страницу фильма</button>
-            </a>
-          </div>
-        </div>
-
-        <!-- Кнопки слайдера (клонировать) -->
-        <div class="section__wrapper container index__sliderButtons">
-          <button id="index-slider-btn" type="button" class="index__slider-btn"><div></div></button>
-        </div>
-
-      </section>
-
-      <!-- Секция - Сегодня в кино -->
+    <section class="discount__main">
+      <!-- Секция - Акции и предложения -->
       <section class="section container section__wrapper">
-        <h1 class="section--heading">Сегодня в кино</h1>
-        <div class="section__wrapper filmCards__list">
-          <a class="filmCard" href=""><div><img src="img/cover/cover1.jpg" alt=""><p>Веном 2</p></div></a>
-          <a class="filmCard new" href=""><div><img src="img/cover/cover2.jpg" alt=""><p>Семейка Аддамс: Горящий тур</p></div></a>
-          <a class="filmCard" href=""><div><img src="img/cover/cover3.jpg" alt=""><p>Не время умирать</p></div></a>
-          <a class="filmCard new" href=""><div><img src="img/cover/cover4.jpg" alt=""><p>Дюна</p></div></a>
-          <a class="filmCard" href=""><div><img src="img/cover/cover1.jpg" alt=""><p>Веном 2</p></div></a>
-          <a class="filmCard" href=""><div><img src="img/cover/cover2.jpg" alt=""><p>Семейка Аддамс: Горящий тур</p></div></a>
-          <a class="filmCard new" href=""><div><img src="img/cover/cover3.jpg" alt=""><p>Не время умирать</p></div></a>
-          <a class="filmCard" href=""><div><img src="img/cover/cover4.jpg" alt=""><p>Дюна</p></div></a>
-          <a class="filmCard" href=""><div><img src="img/cover/cover1.jpg" alt=""><p>Веном 2</p></div></a>
-          <a class="filmCard" href=""><div><img src="img/cover/cover2.jpg" alt=""><p>Семейка Аддамс: Горящий тур</p></div></a>
-          <a class="filmCard" href=""><div><img src="img/cover/cover3.jpg" alt=""><p>Не время умирать</p></div></a>
-          <a class="filmCard" href=""><div class="filmCard--empty"><img src="img/plus-svgrepo-com.svg" alt=""><p>Больше фильмов</p></div></a>
+        <h1 class="section--heading">Акции и предложения</h1>
+        <div class="section__wrapper discount__list">
+          <!-- Заготовка карткочки (клонировать) -->
+          <a id="discount-card" class="discount__card empty" href="">
+            <div><img class="discount__cardImg" src="" alt=""></div>
+            <p class="discount__cardName"></p>
+            <p class="discount__cardDesc"></p>
+          </a>
         </div>
       </section>
-
-      <!-- Секция - Скоро в кино -->
-      <section class="section container section__wrapper">
-        <h1 class="section--heading">Скоро в кино</h1>
-        <div class="section__wrapper filmCards__list">
-          <a class="filmCard exclusive" href=""><div><img src="img/cover/cover5.png" alt=""><p>Гладиатор</p></div></a>
-          <a class="filmCard" href=""><div><img src="img/cover/cover6.jpg" alt=""><p>Возвращение</p></div></a>
-          <a class="filmCard available" href=""><div><img src="img/cover/cover7.jpg" alt=""><p>Кощей. Начало</p></div></a>
-          <a class="filmCard available" href=""><div><img src="img/cover/cover8.jpg" alt=""><p>Кошмар на улице вязов</p></div></a>
-          <a class="filmCard" href=""><div><img src="img/cover/cover9.jpg" alt=""><p>Ледяной демон</p></div></a>
-          <a class="filmCard" href=""><div class="filmCard--empty"><img src="img/plus-svgrepo-com.svg" alt=""><p>Больше новинок</p></div></a>
-        </div>
-      </section>
-
     </section>
   </main>
   <!-- -------------------- footer -------------------- -->
