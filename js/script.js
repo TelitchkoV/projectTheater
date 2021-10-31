@@ -78,13 +78,13 @@ function Index__SliderFillFilmCards(){
         listThumbnailImages[i].style.width = "100%";
         listThumbnailImages[i].style.height = "auto";
       }
-      // Фикс - иногда кнопка фильмов слайдера загружается немного выше, чем надо
-      Index__GetActiveButtonPosition();
     }
     // Обновить название
     listFilmName[i].innerHTML = Index__SliderFilms[i][1];
     // Обновить описание
     listFilmDesc[i].innerHTML = Index__SliderFilms[i][2];
+    // Фикс - иногда кнопка фильмов слайдера загружается немного выше, чем надо
+    Index__GetActiveButtonPosition();
   }
 
 }
@@ -163,7 +163,7 @@ function Index__GetActiveButtonPosition(){
 
   var btnPrime = document.getElementById("index__slider-FilmBtnPrime");
   if (btnActive.top + window.scrollY > 0) btnPrime.style.top = btnActive.top + window.scrollY - 463 + "px";
-  else btnPrime.style.top = "-46px";
+  // else btnPrime.style.top = "-46px";
 
   // btnPrime.style.left = btnActive.left  + window.scrollX + "px";
   btnPrime.style.opacity = "100%";
