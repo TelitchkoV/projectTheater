@@ -15,6 +15,9 @@
 
   transform: scale(1);
   transition: transform 0.3s ease-out;
+
+  border: none;
+  border-radius: 10px;
 }
 .discount__cardName{
   margin-top: 20px;
