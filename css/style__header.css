@@ -103,18 +103,19 @@ header{
   background: none;
   padding: 10px 0;
 }
-.header__login p{
+.header__login{
   font-size: 16px;
   color: var(--color-text-bright);
-  padding-right: 20px;
+
   transition: color .3s linear;
 }
 .header__login img{
+  margin-left: 20px;
   width: 25px;
   height: auto;
   -webkit-filter: var(--svgColor-yellow);
           filter: var(--svgColor-yellow);
 }
-.header__login:hover p{
+.header__login:hover{
   color: var(--color-yellow);
 }
