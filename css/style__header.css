@@ -25,7 +25,8 @@ header{
 .header__logo img{
   width: 70px;
   height: auto;
-  filter: var(--svgColor-yellow);
+  -webkit-filter: var(--svgColor-yellow);
+          filter: var(--svgColor-yellow);
   pointer-events: none;
 }
 .header__logo:hover{
@@ -63,7 +64,8 @@ header{
 .header__social__icon img{
   width: 20px;
   height: auto;
-  filter: var(--svgColor-bright);
+  -webkit-filter: var(--svgColor-bright);
+          filter: var(--svgColor-bright);
 }
 /* Ссылки-иконки, верхний слой */
 .header__social__icon div{
@@ -74,7 +76,8 @@ header{
   transition: opacity 0.3s linear;
 }
 .header__social__icon div img{
-  filter: var(--svgColor-yellow);
+  -webkit-filter: var(--svgColor-yellow);
+          filter: var(--svgColor-yellow);
 }
 /* Ссылки-иконки при наведении */
 .header__social__icon div:hover{
@@ -86,7 +89,11 @@ header{
   font-size: 16px;
 }
 .header__login button{
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   padding-left: 20px;
 
@@ -99,5 +106,6 @@ header{
 .header__login img{
   width: 25px;
   height: auto;
-  filter: var(--svgColor-yellow);
+  -webkit-filter: var(--svgColor-yellow);
+          filter: var(--svgColor-yellow);
 }

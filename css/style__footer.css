@@ -49,7 +49,8 @@ footer{
 .footer__icon img{
   width: 25px;
   height: auto;
-  filter: var(--svgColor-dark);
+  -webkit-filter: var(--svgColor-dark);
+          filter: var(--svgColor-dark);
 }
 /* Ссылки-иконки, верхний слой */
 .footer__icon div{
@@ -60,7 +61,8 @@ footer{
   transition: opacity 0.3s linear;
 }
 .footer__icon div img{
-  filter: var(--svgColor-yellow);
+  -webkit-filter: var(--svgColor-yellow);
+          filter: var(--svgColor-yellow);
 }
 /* Ссылки-иконки при наведении */
 .footer__icon div:hover{

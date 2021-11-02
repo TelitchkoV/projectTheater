@@ -79,7 +79,8 @@ a:hover{
 
 /* Разделение между секциями */
 .section{
-  padding: 40px 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 /* Контент секции*/
@@ -106,6 +107,8 @@ a:hover{
   position: relative;
   max-width: 1110px;
   margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* Отступ между секциями вверх */

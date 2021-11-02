@@ -73,7 +73,8 @@
 
   transform: scale(1);
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-  filter: var(--svgColor-bright);
+  -webkit-filter: var(--svgColor-bright);
+          filter: var(--svgColor-bright);
   pointer-events: none;
 }
 .index__slider-thumbnail:hover{
@@ -228,12 +229,20 @@
   align-content: center;
   justify-content: center;
 
+  min-height: -webkit-fit-content;
+
+  min-height: -moz-fit-content;
+
   min-height: fit-content;
 
   padding-top: 34px;
 }
 .index__sliderButtons button{
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   border: none;
   background: none;
@@ -383,7 +392,8 @@
 .filmCard--empty img{
   width: 50px;
   height: auto;
-  filter: var(--svgColor-yellow);
+  -webkit-filter: var(--svgColor-yellow);
+          filter: var(--svgColor-yellow);
 }
 .filmCard--empty p{
   width: 100px;
