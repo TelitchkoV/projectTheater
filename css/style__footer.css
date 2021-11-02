@@ -1,6 +1,7 @@
 footer{
   width: 100%;
   background-color: var(--color-foreground-main);
+  margin-bottom: 0;
 }
 
 .footer__sections,
@@ -15,7 +16,7 @@ footer{
 }
 
 /* Названия списков */
-.footer__section h1{
+.footer__section p{
   padding-bottom: 20px;
   font-size: 18px;
 }

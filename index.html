@@ -29,7 +29,7 @@
 </head>
 
 <body>
-  <!-- -------------------- header -------------------- -->
+  <!-- header -->
   <header>
     <section class="container section__wrapper header__sections">
       <!-- Лого Кинотеатра -->
@@ -91,18 +91,16 @@
 
         </ul>
       </div>
+      <!-- Вход -->
       <div class="header__section">
-        <a class="header__login" href="" >
+        <button class="header__login" id="header-login" type="button">
           <p>Войти</p>
-          <!-- <label for="header-login" id="header-login--label"></label> -->
-          <button id="header-login" type="button">
-            <img src="img/icon-signin.svg" alt="Войти">
-          </button>
-        </a>
+          <img src="img/icon-signin.svg" alt="Войти">
+        </button>
       </div>
     </section>
   </header>
-  <!-- -------------------- main -------------------- -->
+  <!-- main -->
   <main>
     <section class="index__main">
       <!-- Секция - Слайдер -->
@@ -125,7 +123,7 @@
             </div>
             <!-- Правая половина - инфо -->
             <div class="index__slider-FilmInfo">
-              <h1 class="index__slider-FilmName"></h1>
+              <p class="index__slider-FilmName"></p>
               <div class="index__slider-FilmDesc"></div>
               <!-- Кнопка "На страницу фильма" - НЕВИДИМАЯ, нужна для координат -->
               <a class="index__slider-FilmBtn" href="">
@@ -150,7 +148,7 @@
 
         <!-- Кнопки слайдера (клонировать) -->
         <div class="section__wrapper container index__sliderButtons">
-          <button id="index-slider-btn" type="button" class="index__slider-btn"><div></div></button>
+          <button id="index-slider-btn" type="button" class="index__slider-btn"><span></span></button>
         </div>
 
       </section>
@@ -176,7 +174,7 @@
 
       <!-- Секция - Скоро в кино -->
       <section class="section container section__wrapper">
-        <h1 class="section--heading">Скоро в кино</h1>
+        <h2 class="section--heading">Скоро в кино</h2>
         <div class="section__wrapper filmCards__list">
           <a class="filmCard exclusive" href=""><div><img src="img/cover/cover5.png" alt=""><p>Гладиатор</p></div></a>
           <a class="filmCard" href=""><div><img src="img/cover/cover6.jpg" alt=""><p>Возвращение</p></div></a>
@@ -189,11 +187,11 @@
 
     </section>
   </main>
-  <!-- -------------------- footer -------------------- -->
+  <!-- footer -->
   <footer>
     <section class="section container section__wrapper footer__sections">
       <div class="footer__section">
-        <h1>Для гостей</h1>
+        <p>Для гостей</p>
         <ul class="footer__list">
           <li class="footer__item"><a href="">Расписание фильмов</a></li>
           <li class="footer__item"><a href="">Расписание кинотеатров</a></li>
@@ -202,7 +200,7 @@
         </ul>
       </div>
       <div class="footer__section">
-        <h1>Форматы и залы</h1>
+        <p>Форматы и залы</p>
         <ul class="footer__list">
           <li class="footer__item"><a href="formats__IMAX.html">IMAX</a></li>
           <li class="footer__item"><a href="formats__4DX.html">4DX</a></li>
@@ -211,14 +209,14 @@
         </ul>
       </div>
       <div class="footer__section">
-        <h1>О нас</h1>
+        <p>О нас</p>
         <ul class="footer__list">
           <li class="footer__item"><a href="">Контакты</a></li>
           <li class="footer__item"><a href="">Обратная связь</a></li>
         </ul>
       </div>
       <div class="footer__section">
-        <h1>Мы в соцсетях</h1>
+        <p>Мы в соцсетях</p>
         <ul class="footer__list--social">
 
           <li class="footer__item">
