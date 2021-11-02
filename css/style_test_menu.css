@@ -1,0 +1,94 @@
+.IMAX__content h1{
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.IMAX__content p{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.IMAX__center{
+  text-align: center;
+}
+.IMAX__cinema-inner {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 100%;
+  border-bottom: 2px solid grey;
+}
+.IMAX__cinema-adress {
+  margin-top: 20px;
+}
+.IMAX__cinema-cities {
+  margin-top: 10px;
+  display: flex;
+}
+.IMAX__cinema-city-circle {
+  width: 5px;
+  height: 5px;
+  border-radius: 30px;
+  background-color: green;
+  margin-right: 10px;
+}
+.IMAX__active {
+  background-color: red;
+}
+.IMAX__cinema-city-item {
+  display: flex;
+  min-width: 70px;
+  align-items: center;
+  margin-right: 7px;
+}
+.IMAX__cinema-film {
+  padding-left: 20px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.IMAX__cinema-film-info {
+  padding: 15px 0;
+  display: flex;
+}
+.IMAX__cinema-film-avatar {
+  width: 100px;
+  height: 140px;
+  margin-right: 10px;
+}
+.IMAX__cinema-film-char {
+  display: flex;
+}
+.IMAX__cinema-film-age {
+  border-radius: 2px;
+  width: 40px;
+  text-align: center;
+  border: 1px solid white;
+  margin-right: 5px;
+  color: white;
+}
+.IMAX__cinema-film-name {
+  margin-top: 15px;
+}
+.IMAX__cinema-film-company {
+  margin-top: 20px;
+}
+.IMAX__cinema-film-time {
+  margin-top: 10px;
+}
+.IMAX__cinema-film-pay {
+  width: 25%;
+}
+.IMAX__cinema-film-pay-items {
+  display: flex;
+  justify-content: space-between;
+}
+.IMAX__item-time {
+  width: 80px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+.IMAX__item-pay {
+  margin-top: 15px;
+}
