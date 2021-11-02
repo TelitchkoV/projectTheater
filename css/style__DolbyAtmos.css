@@ -1,0 +1,40 @@
+/* Отмечено в футере как выбранное */
+.footer__section:nth-child(2) li:nth-child(3) a{
+  color: var(--color-yellow);
+  pointer-events: none;
+}
+
+.DolbyAtmos__heading{
+  font-size: 18px;
+  font-weight: 700;
+}
+.DolbyAtmos__wrapper img{
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+.DolbyAtmos__list li{
+  font-size: 16px;
+  margin: 20px 0;
+  color: var(--color-text-brighter);
+}
+.DolbyAtmos__Ulist{
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-bottom: 10px;
+}
+.DolbyAtmos__Ulist li{
+  font-size: 14px;
+  color: var(--color-text-dark);
+  padding-left: 15px;
+}
+.DolbyAtmos__headingUl{
+  padding-top: 20px;
+}
+.DolbyAtmos__wrapper iframe{
+  border: none;
+  border-radius: 10px;
+  margin: 30px 0;
+}

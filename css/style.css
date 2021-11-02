@@ -97,6 +97,7 @@ a:hover{
 .section--heading{
   font-size: 30px;
   padding-bottom: 40px;
+  color: var(--color-text-brighter);
 }
 
 /* Хранитель контента секции*/
