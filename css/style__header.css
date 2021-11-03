@@ -11,16 +11,30 @@ header{
 .header__menu__list,
 .header__social__list,
 .header__login{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 /* --------------- Лого сайта --------------- */
 .header__logo{
-  transform: scale(1);
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 .header__logo img{
   width: 70px;
@@ -30,7 +44,9 @@ header{
   pointer-events: none;
 }
 .header__logo:hover{
-  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 /* --------------- Список меню --------------- */
@@ -48,10 +64,18 @@ header{
 .header__social__item,
 .header__social__icon,
 .header__social__icon div{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 .header__social__list li{
   padding-left: 25px;
@@ -73,6 +97,8 @@ header{
   background-color: var(--color-foreground-main);
 
   opacity: 0%;
+  -webkit-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear;
 }
 .header__social__icon div img{
@@ -96,6 +122,10 @@ header{
   background: none;
   border: none;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
 
   cursor: pointer;
@@ -106,6 +136,10 @@ header{
 .header__login{
   font-size: 16px;
   color: var(--color-text-bright);
+
+  -webkit-transition: color .3s linear;
+
+  -o-transition: color .3s linear;
 
   transition: color .3s linear;
 }
