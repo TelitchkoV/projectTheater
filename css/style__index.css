@@ -88,6 +88,10 @@
 }
 .index__slider-thumbnail img:first-of-type{
 
+  /* Фикс для браузера FireFox */
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+
   /* Меняются, в зависимости от соотношения сторон картинки */
   width: auto;
   height: 100%;
