@@ -132,19 +132,19 @@
             <div class="index__slider-FilmVideo">
               <!-- Чёрный бекграунд под превью и видео -->
               <div class="index__slider-bg"></div>
-              <button class="index__slider-thumbnail" type="button">
+              <button class="index__slider-thumbnail" type="button" aria-label="Включить трейлер фильма" tabindex="-1">
                 <img src="#" alt="" class="index__slider-thumbnailImage">
-                <img src="img/icon-playbutton.svg" alt="Включить видео >">
+                <img src="img/icon-playbutton.svg" alt="Включить трейлер фильма>">
               </button>
               <!-- Проигрыватель YouTube -->
-              <iframe class="index__slider-video" width="560" height="315" src="#" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe class="index__slider-video" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <!-- Правая половина - инфо -->
             <div class="index__slider-FilmInfo">
               <p class="index__slider-FilmName"></p>
               <div class="index__slider-FilmDesc"></div>
               <!-- Кнопка "На страницу фильма" - НЕВИДИМАЯ, нужна для координат -->
-              <a class="index__slider-FilmBtn" href="">
+              <a class="index__slider-FilmBtn" href="" tabindex="-1">
                 <!-- Анимированный бекграунд градиент -->
                 <div></div>
                 <!-- Кнопка, но только текст -->
@@ -166,7 +166,7 @@
 
         <!-- Кнопки слайдера (клонировать) -->
         <div class="section__wrapper container index__sliderButtons">
-          <button id="index-slider-btn" type="button" class="index__slider-btn"><span></span></button>
+          <button id="index-slider-btn" type="button" class="index__slider-btn" aria-label="Переключить слайдер"><span></span></button>
         </div>
 
       </section>
@@ -186,7 +186,7 @@
           <a class="filmCard" href=""><div><img src="img/cover/cover1.jpg" alt=""><p>Веном 2</p></div></a>
           <a class="filmCard" href=""><div><img src="img/cover/cover2.jpg" alt=""><p>Семейка Аддамс: Горящий тур</p></div></a>
           <a class="filmCard" href=""><div><img src="img/cover/cover3.jpg" alt=""><p>Не время умирать</p></div></a>
-          <a class="filmCard" href=""><div class="filmCard--empty"><img src="img/icon-plus.svg" alt="+"><p>Больше фильмов</p></div></a>
+          <a class="filmCard empty" href=""><div class="filmCard--empty"><img src="img/icon-plus.svg" alt="+"><p>Больше фильмов</p></div></a>
         </div>
       </section>
 
@@ -199,7 +199,7 @@
           <a class="filmCard available" href=""><div><img src="img/cover/cover7.jpg" alt=""><p>Кощей. Начало</p></div></a>
           <a class="filmCard available" href=""><div><img src="img/cover/cover8.jpg" alt=""><p>Кошмар на улице вязов</p></div></a>
           <a class="filmCard" href=""><div><img src="img/cover/cover9.jpg" alt=""><p>Ледяной демон</p></div></a>
-          <a class="filmCard" href=""><div class="filmCard--empty"><img src="img/icon-plus.svg" alt="+"><p>Больше новинок</p></div></a>
+          <a class="filmCard empty" href=""><div class="filmCard--empty"><img src="img/icon-plus.svg" alt="+"><p>Больше новинок</p></div></a>
         </div>
       </section>
 

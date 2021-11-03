@@ -24,24 +24,21 @@ footer{
 }
 
 /* Названия списков */
-.footer__section p{
-  padding-bottom: 20px;
+.footer__section p:first-child{
+  padding-bottom: 15px;
   font-size: 18px;
 }
-
-/* Список иконок */
-.footer__list--social li{
-  padding-left: 25px;
+.footer__section:nth-child(4){
+  margin: 0 -15px;
 }
-/* Фикс паддинга */
-.footer__list--social li:first-of-type{
-  padding-left: 0;
+.footer__section:nth-child(4) p:first-child{
+  padding-bottom: 5px;
+  padding-left: 15px;
 }
-/* Элементы всех списков */
-.footer__item{
-  padding-bottom: 10px;
+/* Элементы всех списков, но не иконки*/
+.footer__list .footer__item a{
+  padding: 5px 0px;
 }
-
 /* Ссылки-текст */
 .footer__item a{
   font-style: normal;
@@ -53,15 +50,18 @@ footer{
 .footer__item a:hover{
   color: var(--color-yellow);
 }
-
-/* Ссылки-иконки, нижний слой */
+/* Ссылки-иконки */
+.footer__icon{
+  padding: 15px;
+}
+/* Нижний слой */
 .footer__icon img{
   width: 25px;
   height: auto;
   -webkit-filter: var(--svgColor-dark);
           filter: var(--svgColor-dark);
 }
-/* Ссылки-иконки, верхний слой */
+/* Верхний слой */
 .footer__icon div{
   position: absolute;
   background-color: var(--color-foreground-main);
@@ -76,6 +76,6 @@ footer{
           filter: var(--svgColor-yellow);
 }
 /* Ссылки-иконки при наведении */
-.footer__icon div:hover{
+.footer__icon:hover div{
   opacity: 100%;
 }

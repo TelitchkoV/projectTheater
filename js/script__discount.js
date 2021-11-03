@@ -41,9 +41,20 @@ function Discount__CreateCards(rows){
   var listOfCardsDesc = document.getElementsByClassName("discount__cardDesc");
 
   for (let i = 0; i < Index__SliderFilms.length; i++) {
+    listOfCards[i].classList.remove("empty");
     listOfCardsImg[i].src = "img/discount/cover" + i + ".jpg";
     listOfCardsName[i].innerHTML = Index__SliderFilms[i][0];
     listOfCardsDesc[i].innerHTML = Index__SliderFilms[i][1];
-    listOfCards[i].classList.remove("empty");
+  }
+
+  // Заменить пустые ссылки на div блоки
+  var placeholder = document.createElement("div");
+  placeholder.classList.add("discount__card--placeholder");
+  var listOfEmptyCards = document.getElementsByClassName("discount__card empty");
+
+  while (listOfEmptyCards.length > 0)
+  {
+    listOfEmptyCards[0].parentNode.appendChild(placeholder.cloneNode(true));
+    listOfEmptyCards[0].remove();
   }
 }

@@ -35,12 +35,6 @@
   font-size: 14px;
   color: var(--color-text-dark);
 }
-.discount__card.empty{
-  pointer-events: none;
-}
-/* .discount__card:hover div{
-  transform: scale(1.03);
-} */
 .discount__card:hover .discount__cardName{
   color: var(--color-yellow);
 }
@@ -58,4 +52,9 @@
   -webkit-transform: scale(1.03);
       -ms-transform: scale(1.03);
           transform: scale(1.03);
+}
+.discount__card--placeholder{
+  height: 324px;
+  width: 344px;
+  margin: 30px 0;
 }

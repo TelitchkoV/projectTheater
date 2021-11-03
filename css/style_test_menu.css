@@ -62,9 +62,9 @@
   display: flex;
 }
 .IMAX__cinema-film-avatar {
-  width: 100px;
   height: 140px;
-  margin-right: 10px;
+  width: auto;
+  margin-right: 20px;
 }
 .IMAX__cinema-film-char {
   display: -webkit-box;

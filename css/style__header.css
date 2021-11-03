@@ -9,7 +9,6 @@ header{
 .header__sections,
 .header__logo,
 .header__menu__list,
-.header__social__list,
 .header__login{
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,6 +22,10 @@ header{
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.header__sections{
+  min-height: 100px;
 }
 
 /* --------------- Лого сайта --------------- */
@@ -51,9 +54,15 @@ header{
 
 /* --------------- Список меню --------------- */
 .header__menu__item{
-  padding: 40px 0;
-  padding-left: 46px;
+  /* padding: 40px 0; */
+  padding-left: 30px;
   font-size: 20px;
+}
+.header__menu__item a{
+  padding: 10px 5px;
+}
+.header__menu__list{
+  margin: 0 -5px;
 }
 .header__menu__list li:first-of-type{
   padding-left: 0;
@@ -77,12 +86,11 @@ header{
       -ms-flex-align: start;
           align-items: flex-start;
 }
-.header__social__list li{
-  padding-left: 25px;
+.header__social__list{
+  margin: 0 -15px;
 }
-/* Фикс паддинга */
-.header__social__list li:first-of-type{
-  padding-left: 0;
+.header__social__icon{
+  padding: 15px;
 }
 /* Ссылки-иконки, нижний слой */
 .header__social__icon img{
@@ -106,7 +114,7 @@ header{
           filter: var(--svgColor-yellow);
 }
 /* Ссылки-иконки при наведении */
-.header__social__icon div:hover{
+.header__social__icon:hover div{
   opacity: 100%;
 }
 

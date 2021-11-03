@@ -43,6 +43,10 @@ function Index__SliderCreateFilmCards(){
   var listOfFilmCards = document.getElementsByClassName("index__slider-FilmCard");
   listOfFilmCards[Index__SliderFilm_i].classList.add("active");
 
+  // Управление клавиатурой
+  var listOfThumbnail = document.getElementsByClassName("index__slider-thumbnail");
+  listOfThumbnail[Index__SliderFilm_i].tabIndex = 0;
+
   // Заполнить данными
   Index__SliderFillFilmCards();
 }
@@ -124,6 +128,11 @@ function Index__SliderFillButtons(){
         listOfButtons[i].classList.add("pressed");
         listOfButtons[Index__SliderFilm_i].classList.remove("pressed");
 
+
+        // Управление клавиатурой
+        var listOfThumbnail = document.getElementsByClassName("index__slider-thumbnail");
+        listOfThumbnail[Index__SliderFilm_i].tabIndex = -1;
+        listOfThumbnail[i].tabIndex = 0;
 
         Index__SliderFilm_i = i;
         Index__GetActiveButtonPosition();
