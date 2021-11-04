@@ -166,9 +166,9 @@ function Index__GetActiveButtonPosition(firstLoad){
 
   if (!firstLoad) {
     if (btnActive.top + window.scrollY > 0) btnPrime.style.top = btnActive.top + window.scrollY - 463 + "px";
-    else btnPrime.style.top = "-46px";
+    else btnPrime.style.top = "-48px";
   }
-  else btnPrime.style.top = "-46px";
+  else btnPrime.style.top = "-48px";
 
   // btnPrime.style.left = btnActive.left  + window.scrollX + "px";
   btnPrime.style.opacity = "100%";

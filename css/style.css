@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 body{
   min-width: 1110px;
 
-  background-color: var(--color-background-main);
+  background-color: var(--color-foreground-main);
 
   /* Весь стандартный текст */
   font-family: 'Open Sans', sans-serif;
@@ -95,6 +95,10 @@ a{
 a:hover{
   color: var(--color-yellow);
   /* text-decoration: underline; */
+}
+.activePage{
+  color: var(--color-yellow) !important;
+  pointer-events: none;
 }
 
 /* Разделение между секциями */
@@ -153,6 +157,6 @@ a:hover{
 
 /* Фикс для хедера */
 main{
-  margin-top: 102px;
+  margin-top: 100px;
   background-color: var(--color-background-main);
 }

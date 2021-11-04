@@ -1,0 +1,79 @@
+/* Текст */
+.formats__wrapper p{
+  font-size: 16px;
+  margin: 15px 0;
+  color: var(--color-text-brighter);
+}
+.formats__wrapper p.heavy{
+  font-weight: 700;
+}
+.formats__wrapper p.remark{
+  margin: 35px 0;
+  font-style: italic;
+}
+.formats__wrapper > *:first-child{
+  margin-top: 30px !important;
+}
+.formats__wrapper > *:last-child{
+  margin-bottom: 30px !important;
+}
+
+/* Заголовки */
+.formats__heading{
+  text-align: center;
+  font-size: 18px !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-top: 20px;
+  width: 100%;
+}
+.formats__heading--small{
+  font-size: 18px !important;
+  text-transform: uppercase;
+  padding-top: 20px;
+}
+
+/* Лист */
+.formats__list-heading{
+  /* margin-top: 0 !important; */
+  margin-bottom: 0 !important;
+}
+.formats__list{
+  list-style-type: disc;
+  list-style-position: outside;
+  padding-bottom: 10px;
+  padding-left: 40px;
+}
+.formats__list li{
+  /* font-size: 16px; */
+  margin: 10px 0;
+  color: var(--color-text-dark);
+}
+
+/* Нестандартный параграф */
+.formats__p--special{
+  color: var(--color-text-dark) !important;
+}
+.formats__p--special span{
+  font-weight: 700;
+  color: var(--color-text-brighter);
+}
+.formats__p--special.first{
+  margin-top: 30px !important;
+}
+
+/* Видео */
+.formats__wrapper iframe{
+  border: none;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+
+/* Большая обложка */
+.formats__wrapper img{
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 10px;
+  margin: 30px 0;
+}

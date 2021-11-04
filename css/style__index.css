@@ -278,7 +278,7 @@
 .index__slider-FilmBtn.prime{
   /* Фикс - иногда кнопка не отображается
   при первой загрузке страницы */
-  top: -46px;
+  top: -48px;
   position: absolute;
   -webkit-transition:
     top 0.3s ease-out,
