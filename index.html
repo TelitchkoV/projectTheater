@@ -7,6 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Шрифт Open Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
   <!-- Стили -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
@@ -14,19 +19,15 @@
   <link rel="stylesheet" href="css/style__footer.css">
   <link rel="stylesheet" href="css/style__index.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <script type="text/javascript" defer src="js/script.js"></script>
   <script type="text/javascript" defer src="js/script__index.js"></script>
-
-  <!-- Шрифт Open Sans -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
   <!-- Теги -->
   <meta name="keywords" content="кинотеатр, киноцентр, сеть кинотеатров, кино, забронировать билеты, купить билет в кино, новинки кино, премьеры фильмов, расписание сеансов в кино, киноафиша, смотреть кино, скидки на кино, акции на кино, бронирование">
   <!-- Описание -->
   <meta name="description" content="Выбирайте удобное время из расписания сеансов и покупайте билеты онлайн в кинотеатры киносети. Новинки и новости кино. Скидки и акции на кино. Бронирование билетов в кино. Расписание сеансов в кино. Цены на билеты в кино.">
+  <!-- Цвет строки поиска браузера телефона -->
+  <meta name="theme-color" content="#25272E">
   <!-- Иконка сайта -->
   <link rel="apple-touch-icon" sizes="180x180" href="icons/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/ico" sizes="32x32" href="icons/favicon/favicon.ico">
@@ -46,7 +47,6 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="627">
 
-
   <!-- Название -->
   <title>Кинотеатр Макет</title>
   <!-- Не показывать страницу, пока идёт загрузка стилей -->
@@ -56,6 +56,48 @@
 <body>
   <!-- header -->
   <header>
+
+    <section class="container section__wrapper header__miniMenu">
+      <ul id="header-miniMenu" class="header__menu__list">
+        <li class="header__menu__item"><a href="">Фильмы
+          <div class="header__miniMenuArrow" type="button" aria-label="Открыть главное меню">
+            <img src="img/icon-chevron.svg" alt=">">
+              <!-- Бекграунд, чтобы перекрыть нижний слой -->
+              <span>
+                <img src="img/icon-chevron.svg" alt=">">
+              </span>
+          </div>
+        </a></li>
+        <li class="header__menu__item"><a href="">Кинотеатры
+          <div class="header__miniMenuArrow" type="button" aria-label="Открыть главное меню">
+            <img src="img/icon-chevron.svg" alt=">">
+              <!-- Бекграунд, чтобы перекрыть нижний слой -->
+              <span>
+                <img src="img/icon-chevron.svg" alt=">">
+              </span>
+          </div>
+        </a></li>
+        <li class="header__menu__item"><a href="">События
+          <div class="header__miniMenuArrow" type="button" aria-label="Открыть главное меню">
+            <img src="img/icon-chevron.svg" alt=">">
+              <!-- Бекграунд, чтобы перекрыть нижний слой -->
+              <span>
+                <img src="img/icon-chevron.svg" alt=">">
+              </span>
+          </div>
+        </a></li>
+        <li class="header__menu__item"><a href="discount.html">Акции
+          <div class="header__miniMenuArrow" type="button" aria-label="Открыть главное меню">
+            <img src="img/icon-chevron.svg" alt=">">
+              <!-- Бекграунд, чтобы перекрыть нижний слой -->
+              <span>
+                <img src="img/icon-chevron.svg" alt=">">
+              </span>
+          </div>
+        </a></li>
+      </ul>
+    </section>
+
     <section class="container section__wrapper header__sections">
       <!-- Лого Кинотеатра -->
       <div class="header__section">
@@ -123,7 +165,18 @@
           <img src="img/icon-signin.svg" alt=">>">
         </button>
       </div>
+      <!-- Выпадающее меню (для узких экранов) -->
+      <div class="header__section">
+        <button id="header-miniMenuBtn" class="header__miniMenuBtn" type="button" aria-label="Открыть главное меню">
+          <img src="img/icon-bars.svg" alt="MENU">
+              <!-- Бекграунд, чтобы перекрыть нижний слой -->
+              <span>
+                <img src="img/icon-bars.svg" alt="MENU">
+              </span>
+        </button>
+      </div>
     </section>
+
   </header>
   <!-- main -->
   <main>
@@ -132,19 +185,20 @@
       <section class="section section__wrapper index__slider indent-bottom">
 
         <!-- Контейнер карточек -->
-        <div id="index-slider-container" class="index__slider-container">
+        <div id="index-slider-container" class="index__slider-container container">
           <!-- Пустая заготовка карточки для слайдера (клонировать) -->
           <div id="index-slider-FilmCard" class="section__wrapper container index__slider-FilmCard">
             <!-- Левая половина - проигрыватель -->
             <div class="index__slider-FilmVideo">
               <!-- Чёрный бекграунд под превью и видео -->
               <div class="index__slider-bg"></div>
+              <!-- Превью кнопка -->
               <button class="index__slider-thumbnail" type="button" aria-label="Включить трейлер фильма" tabindex="-1">
                 <img src="#" alt="" class="index__slider-thumbnailImage">
                 <img src="img/icon-playbutton.svg" alt="Включить трейлер фильма>">
               </button>
               <!-- Проигрыватель YouTube -->
-              <iframe class="index__slider-video" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe class="index__slider-video" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <!-- Правая половина - инфо -->
             <div class="index__slider-FilmInfo">
@@ -155,7 +209,7 @@
                 <!-- Анимированный бекграунд градиент -->
                 <div></div>
                 <!-- Кнопка, но только текст -->
-                <button type="button" disabled>На страницу фильма</button>
+                <button type="button" tabindex="-1" disabled>На страницу фильма</button>
               </a>
             </div>
           </div>
@@ -166,7 +220,7 @@
           <div>
             <a id="index__slider-FilmBtnPrime" class="index__slider-FilmBtn prime" href="">
               <div></div>
-              <button type="button" disabled>На страницу фильма</button>
+              <button type="button" tabindex="-1" disabled>На страницу фильма</button>
             </a>
           </div>
         </div>
@@ -209,8 +263,8 @@
           <a class="filmCard empty" href=""><div class="filmCard--empty"><img src="img/icon-plus.svg" alt="+"><p>Больше новинок</p></div></a>
         </div>
       </section>
-
     </section>
+
   </main>
   <!-- footer -->
   <footer>

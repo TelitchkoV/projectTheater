@@ -25,7 +25,7 @@
           align-items: stretch;
   /* Высота видео + 6 */
   min-height: 321px;
-  min-width: 1110px;
+  width: 100%;
 
   pointer-events: none;
   opacity: 0%;
@@ -39,9 +39,10 @@
 }
 .index__slider-container{
   min-height: 321px;
-  min-width: 1110px;
+  width: 100%;
 
   margin: 0 auto;
+  padding: 0;
 
   display: -webkit-box;
 
@@ -63,12 +64,18 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+/* Блок видео */
+.index__slider-FilmVideo{
+  max-width: 560px;
+  max-height: 315px;
+}
 /* Превью видео */
 .index__slider-thumbnail{
   position: absolute;
 
   width: 560px;
   height: 315px;
+  /* aspect-ratio: 16/9; */
 
   display: -webkit-box;
 
@@ -160,7 +167,10 @@
   /* display: none; */
 }
 /* Встроенное видео YouTube */
-.index__slider-FilmVideo iframe{
+.index__slider-video{
+  width: 560px;
+  height: 315px;
+
   position: absolute;
 
   border: none;
@@ -520,4 +530,24 @@
 }
 .filmCard--empty p{
   width: 100px;
+}
+
+
+
+
+
+
+
+@media (max-width: 1110px) {
+  .index__slider{
+    display: none;
+  }
+}
+@media (max-width: 768px){
+}
+@media (max-width: 359px) {
+  .filmCards__list{
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
 }

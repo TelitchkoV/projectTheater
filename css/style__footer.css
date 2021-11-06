@@ -2,6 +2,12 @@ footer{
   width: 100%;
   background-color: var(--color-foreground-main);
   margin-bottom: 0;
+
+  -webkit-transition: opacity 0.3s linear;
+
+  -o-transition: opacity 0.3s linear;
+
+  transition: opacity 0.3s linear;
 }
 
 .footer__sections,
@@ -78,4 +84,53 @@ footer{
 /* Ссылки-иконки при наведении */
 .footer__icon:hover div{
   opacity: 100%;
+}
+
+
+
+
+
+
+@media (max-width: 768px){
+  .footer__sections,
+  .footer__section{
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer__section,
+  .footer__list{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .footer__section{
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+
+    min-height: 50px;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  .footer__list{
+    padding-top: 5px;
+    width: 100%;
+  }
+  .footer__list .footer__item{
+    padding-right: 15px;
+  }
+  .footer__section:nth-child(4){
+    margin: 0;
+    padding-bottom: 0;
+  }
+  .footer__list--social{
+    margin-left: -12px;
+  }
+  .footer__section p{
+    padding: 0 !important;
+  }
 }

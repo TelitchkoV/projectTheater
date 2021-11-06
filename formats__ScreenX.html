@@ -7,25 +7,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Шрифт Open Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+  <!-- Стили -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/style__header.css">
   <link rel="stylesheet" href="css/style__footer.css">
   <link rel="stylesheet" href="css/style__formats.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <script type="text/javascript" defer src="js/script.js"></script>
   <script type="text/javascript" defer src="js/script__formats.js"></script>
-
-  <!-- Шрифт Open Sans -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
   <!-- Теги -->
   <meta name="keywords" content="кинотеатр, киноцентр, сеть кинотеатров, кино, забронировать билеты, купить билет в кино, новинки кино, премьеры фильмов, расписание сеансов в кино, киноафиша, смотреть кино, скидки на кино, акции на кино, бронирование">
   <!-- Описание -->
   <meta name="description" content="Выбирайте удобное время из расписания сеансов и покупайте билеты онлайн в кинотеатры киносети. Новинки и новости кино. Скидки и акции на кино. Бронирование билетов в кино. Расписание сеансов в кино. Цены на билеты в кино.">
+  <!-- Цвет строки поиска браузера телефона -->
+  <meta name="theme-color" content="#25272E">
   <!-- Иконка сайта -->
   <link rel="apple-touch-icon" sizes="180x180" href="icons/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/ico" sizes="32x32" href="icons/favicon/favicon.ico">
@@ -54,6 +56,48 @@
 <body>
   <!-- header -->
   <header>
+
+    <section class="container section__wrapper header__miniMenu">
+      <ul id="header-miniMenu" class="header__menu__list">
+        <li class="header__menu__item"><a href="">Фильмы
+          <div class="header__miniMenuArrow" type="button" aria-label="Открыть главное меню">
+            <img src="img/icon-chevron.svg" alt=">">
+              <!-- Бекграунд, чтобы перекрыть нижний слой -->
+              <span>
+                <img src="img/icon-chevron.svg" alt=">">
+              </span>
+          </div>
+        </a></li>
+        <li class="header__menu__item"><a href="">Кинотеатры
+          <div class="header__miniMenuArrow" type="button" aria-label="Открыть главное меню">
+            <img src="img/icon-chevron.svg" alt=">">
+              <!-- Бекграунд, чтобы перекрыть нижний слой -->
+              <span>
+                <img src="img/icon-chevron.svg" alt=">">
+              </span>
+          </div>
+        </a></li>
+        <li class="header__menu__item"><a href="">События
+          <div class="header__miniMenuArrow" type="button" aria-label="Открыть главное меню">
+            <img src="img/icon-chevron.svg" alt=">">
+              <!-- Бекграунд, чтобы перекрыть нижний слой -->
+              <span>
+                <img src="img/icon-chevron.svg" alt=">">
+              </span>
+          </div>
+        </a></li>
+        <li class="header__menu__item"><a href="discount.html">Акции
+          <div class="header__miniMenuArrow" type="button" aria-label="Открыть главное меню">
+            <img src="img/icon-chevron.svg" alt=">">
+              <!-- Бекграунд, чтобы перекрыть нижний слой -->
+              <span>
+                <img src="img/icon-chevron.svg" alt=">">
+              </span>
+          </div>
+        </a></li>
+      </ul>
+    </section>
+
     <section class="container section__wrapper header__sections">
       <!-- Лого Кинотеатра -->
       <div class="header__section">
@@ -121,7 +165,18 @@
           <img src="img/icon-signin.svg" alt=">>">
         </button>
       </div>
+      <!-- Выпадающее меню (для узких экранов) -->
+      <div class="header__section">
+        <button id="header-miniMenuBtn" class="header__miniMenuBtn" type="button" aria-label="Открыть главное меню">
+          <img src="img/icon-bars.svg" alt="MENU">
+              <!-- Бекграунд, чтобы перекрыть нижний слой -->
+              <span>
+                <img src="img/icon-bars.svg" alt="MENU">
+              </span>
+        </button>
+      </div>
     </section>
+
   </header>
   <!-- main -->
   <main>

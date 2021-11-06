@@ -5,6 +5,10 @@ header{
   z-index: 100;
   background-color: var(--color-foreground-main);
 }
+header > *:nth-child(2){
+  background-color: var(--color-foreground-main);
+}
+
 
 .header__sections,
 .header__logo,
@@ -28,6 +32,10 @@ header{
   min-height: 100px;
 }
 
+.header__section:nth-child(5){
+  display: none;
+}
+
 /* --------------- Лого сайта --------------- */
 .header__logo{
   -webkit-transform: scale(1);
@@ -40,8 +48,8 @@ header{
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 .header__logo img{
-  width: 70px;
-  height: auto;
+  width: auto;
+  height: 70px;
   -webkit-filter: var(--svgColor-yellow);
           filter: var(--svgColor-yellow);
   pointer-events: none;
@@ -72,7 +80,11 @@ header{
 .header__social__list,
 .header__social__item,
 .header__social__icon,
-.header__social__icon div{
+.header__social__icon div,
+.header__miniMenuBtn,
+.header__miniMenuBtn span,
+.header__miniMenuArrow,
+.header__miniMenuArrow span{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -138,7 +150,6 @@ header{
 
   cursor: pointer;
   pointer-events: all;
-  background: none;
   padding: 10px 0;
 }
 .header__login{
@@ -160,4 +171,210 @@ header{
 }
 .header__login:hover{
   color: var(--color-yellow);
+}
+
+/* ------------- Мини меню кнопка */
+.header__miniMenuBtn{
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+/* Нижний слой */
+.header__miniMenuBtn img{
+  width: auto;
+  height: 30px;
+  -webkit-filter: var(--svgColor-bright);
+          filter: var(--svgColor-bright);
+}
+/* Верхний слой */
+.header__miniMenuBtn span{
+  position: absolute;
+  background-color: var(--color-foreground-main);
+
+  opacity: 0%;
+  -webkit-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+.header__miniMenuBtn span img{
+  -webkit-filter: var(--svgColor-yellow);
+          filter: var(--svgColor-yellow);
+}
+.header__miniMenuBtn.pressed span{
+  opacity: 100%;
+}
+/* При наведении (фикс для тачскринов) */
+@media (hover: hover) {
+  .header__miniMenuBtn:hover span{
+    opacity: 100%;
+  }
+}
+
+/* ------------- Мини меню */
+.header__miniMenu{
+  top: -280px;
+
+  position: absolute;
+  background-color: var(--color-gray);
+  display: none;
+
+  border-radius: 10px;
+  min-height: 120px;
+
+  opacity: 0%;
+  -webkit-transition: top 0.3s ease-out;
+  -o-transition: top 0.3s ease-out;
+  transition: top 0.3s ease-out;
+}
+.header__miniMenu .header__menu__list{
+  margin: 0;
+  margin-top: 200px;
+
+  height: auto;
+  width: 100%;
+
+  -ms-flex-wrap: nowrap;
+
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.header__miniMenu .header__menu__item,
+.header__miniMenu .header__menu__item a{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+
+  padding: 0;
+}
+.header__miniMenu .header__menu__item{
+  height: 70px;
+}
+.header__miniMenu .header__menu__item a{
+  height: 100%;
+  width: 100%;
+}
+/* Иконка стрелка */
+.header__miniMenuArrow{
+  /* padding: 10px; */
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  display: none;
+}
+/* Нижний слой */
+.header__miniMenuArrow img{
+  width: auto;
+  height: 20px;
+  -webkit-filter: var(--svgColor-bright);
+          filter: var(--svgColor-bright);
+}
+/* Верхний слой */
+.header__miniMenuArrow span{
+  position: absolute;
+  background-color: var(--color-background-main);
+
+  opacity: 0%;
+  -webkit-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+.header__miniMenuArrow span img{
+  -webkit-filter: var(--svgColor-yellow);
+          filter: var(--svgColor-yellow);
+}
+.header__miniMenuArrow.pressed span{
+  opacity: 100%;
+}
+/* При наведении (фикс для тачскринов) */
+@media (hover: hover) {
+  .header__miniMenu .header__menu__item a:hover span{
+    opacity: 100%;
+  }
+}
+
+
+
+
+
+
+@media (max-width: 1024px){
+  .header__section:nth-child(3){
+    display: none;
+  }
+}
+@media (max-width: 768px){
+  .header__sections{
+    min-height: 50px;
+    padding: 0 10px;
+  }
+  .header__section:nth-child(2){
+    display: none;
+  }
+  .header__section:nth-child(4){
+    display: none;
+  }
+  .header__section:nth-child(5){
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header__logo{
+    margin-left: 8px;
+  }
+  .header__logo img{
+    height: 50px;
+  }
+  .header__miniMenu{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 100%;
+  }
+}
+@media (max-width: 425px){
+  .header__miniMenu .header__menu__list{
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 10px 0;
+    margin-top: 50px;
+  }
+  .header__miniMenu .header__menu__item{
+    width: 100%;
+    height: 50px;
+  }
+  .header__miniMenu .header__menu__item a{
+    /* padding: 20px 0;
+    padding-right: 100%; */
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .header__miniMenuArrow{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header__miniMenu{
+    top: -280px;
+  }
 }
