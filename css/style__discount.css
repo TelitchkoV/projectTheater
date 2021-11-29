@@ -25,7 +25,7 @@
   margin-top: 20px;
   font-size: 20px;
   color: var(--color-text-brighter);
-  width: 344px;
+  max-width: 344px;
   -webkit-transition: color .3s linear;
   -o-transition: color .3s linear;
   transition: color .3s linear;
@@ -57,4 +57,27 @@
   height: 324px;
   width: 344px;
   margin: 30px 0;
+}
+
+
+
+
+@media (max-width: 1024px) {
+  .discount__card{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 425px) {
+  .discount__card{
+    width: 100%;
+  }
+  .discount__cardImg{
+    width: 100%;
+    height: auto;
+  }
+  .discount__card div{
+    width: 100%;
+    height: auto;
+  }
 }
