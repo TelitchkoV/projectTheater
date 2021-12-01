@@ -384,36 +384,91 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+
+  -webkit-box-align: stretch;
+
+      -ms-flex-align: stretch;
+
+          align-items: stretch;
 }
 /* --------------- Стандартная Карточка фильма --------------- */
 .filmCard{
   margin: 30px 0;
   border-radius: 10px;
-  z-index: 1;
-  height: 300px;
+  z-index: 3;
+}
+.filmCard *{
+  pointer-events: none;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+
+	-webkit-app-region: no-drag;
+	cursor: default;
+
+  overflow: hidden;
 }
 .filmCard.empty{
   height: auto;
 }
-.filmCard p{
-  padding-top: 10px;
+.filmCard__name{
+  padding-top: 16px;
   width: 160px;
+}
+.filmCardDiv{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-box-orient: horizontal;
+
+  -webkit-box-direction: normal;
+
+      -ms-flex-direction: row;
+
+          flex-direction: row;
+
+  border: solid #00000000 2px;
+  border-radius: 14px;
+  padding: 3px;
+  -webkit-transition: border 0.1s linear;
+  -o-transition: border 0.1s linear;
+  transition: border 0.1s linear;
+  margin: -5px;
+
+  overflow: hidden;
 }
 .filmCard img{
   width: 160px;
   height: 240px;
 
-  outline: solid var(--color-yellow) 0px;
-  outline-offset: 3px;
-  -webkit-transition: outline 0.04s linear;
-  -o-transition: outline 0.04s linear;
-  transition: outline 0.04s linear;
   border-radius: 10px;
+
+  z-index: 2;
+
+  -webkit-filter: blur(0px);
+
+          filter: blur(0px);
+  -webkit-transform: filter 0.1s linear;
+      -ms-transform: filter 0.1s linear;
+          transform: filter 0.1s linear;
+}
+.filmCard:hover img:not(.noGenres){
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
 }
 /* Ярлычки над обложками */
-.filmCard.new::before{
-  content: "Новинка";
-
+.filmCard--new,
+.filmCard--exclusive,
+.filmCard--available{
   display: block;
   position: absolute;
 
@@ -423,69 +478,29 @@
   padding: 2px 0;
 
   text-align: center;
-  background-color: var(--color-orange);
   border-radius: 10px;
   color: var(--color-text-darkest);
   font-weight: bold;
 
-  z-index: -1;
+  z-index: -100;
 }
-.filmCard.exclusive::before{
-  content: "Эксклюзив";
+.filmCard--shadow{
   display: block;
   position: absolute;
 
   height: 50px;
-  width: 160px;
-  margin-top: -27px;
-  padding: 2px 0;
-
-  text-align: center;
-  background-color: var(--color-orange);
-  border-radius: 10px;
-  color: var(--color-text-darkest);
-  font-weight: bold;
-
-  z-index: -1;
-}
-.filmCard.available::before{
-  content: "В продаже";
-  display: block;
-  position: absolute;
-
-  height: 50px;
-  width: 160px;
-  margin-top: -27px;
-  padding: 2px 0;
-
-  text-align: center;
-  background-color: var(--color-orange);
-  border-radius: 10px;
-  color: var(--color-text-darkest);
-  font-weight: bold;
-
-  z-index: -1;
-}
-.filmCard.new p::before,
-.filmCard.exclusive p::before,
-.filmCard.available p::before{
-  content: "";
-  display: block;
-  position: absolute;
-
-  height: 50px;
-  width: 164px;
-  margin-left: -2px;
-  margin-top: -259px;
+  width: 166px;
+  margin-left: -3px;
+  margin-top: -3px;
 
   background-color: var(--color-background-main);
-  border-radius: 10px;
+  border-radius: 12px;
 
-  z-index: -1;
+  z-index: -100;
 }
 /* Обводка вокруг карточек */
-.filmCard:hover div:not(.filmCard--empty) img{
-  outline: solid var(--color-yellow) 2px;
+.filmCard:hover .filmCardDiv{
+  border: solid var(--color-yellow) 2px;
 }
 /* Пустая карточка */
 .filmCard--empty{
@@ -531,9 +546,85 @@
 .filmCard--empty p{
   width: 100px;
 }
+.filmCardDiv--spec{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+/* Возрастной рейтинг */
+/* Субтитры */
+.filmCard--Rating,
+.filmCard--Subs{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 
+  color: white;
+  font-size: 13px;
+  background-color: #000000b2;
+  z-index: 5;
+  border: solid white 1px;
+  width: 34px;
 
+  opacity: 85%;
+  -webkit-transition: opacity 0.1s linear;
+  -o-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+}
+.filmCard:hover .filmCard--Rating,
+.filmCard:hover .filmCard--Subs{
+  opacity: 100%;
+}
+.filmCard--Rating{
+  border-radius: 5px 5px 5px 10px;
+}
+.filmCard--Subs{
+  border-radius: 5px 5px 5px 5px;
+  margin-left: 3px;
+}
+/* Жанры */
+.filmCardGenres{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 
+  width: 166px;
+  height: 246px;
+
+  margin-top: -3px;
+  margin-left: -3px;
+
+  z-index: 6;
+  position: absolute;
+
+  border-radius: 10.6px;
+
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(20%, rgba(0,0,0,0)), to(rgba(0, 0, 0, 0.85)));
+
+  background-image: -o-linear-gradient(bottom, rgba(0,0,0,0) 20%, rgba(0, 0, 0, 0.85) 100%);
+
+  background-image: linear-gradient(0deg, rgba(0,0,0,0) 20%, rgba(0, 0, 0, 0.85) 100%);
+  opacity: 0%;
+  -webkit-transition: opacity 0.1s linear;
+  -o-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+
+  padding: 2px 10px;
+
+  color: white;
+  font-size: 13px;
+}
+.filmCard:hover .filmCardGenres{
+  opacity: 100%;
+}
 
 
 

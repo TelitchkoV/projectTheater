@@ -29,15 +29,22 @@ footer{
           align-items: flex-start;
 }
 
+.footer__sections{
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 /* Названия списков */
-.footer__section p:first-child{
+.footer__section p{
   padding-bottom: 15px;
   font-size: 18px;
 }
 .footer__section:nth-child(4){
   margin: 0 -15px;
 }
-.footer__section:nth-child(4) p:first-child{
+.footer__section:nth-child(4) p{
   padding-bottom: 5px;
   padding-left: 15px;
 }
