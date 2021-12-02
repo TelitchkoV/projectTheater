@@ -416,10 +416,7 @@
 
   overflow: hidden;
 }
-.filmCard.empty{
-  height: auto;
-}
-.filmCard__name{
+.filmCard--name{
   padding-top: 16px;
   width: 160px;
 }
@@ -446,7 +443,7 @@
 
   overflow: hidden;
 }
-.filmCard img{
+.filmCard .filmCardCover{
   width: 160px;
   height: 240px;
 
@@ -464,7 +461,7 @@
   transition: filter 0.1s linear;
   transition: filter 0.1s linear, -webkit-filter 0.1s linear;
 }
-.filmCard:hover img:not(.noGenres){
+.filmCard:hover .filmCardCover{
   -webkit-filter: blur(1px);
           filter: blur(1px);
 }
@@ -505,16 +502,25 @@
 .filmCard:hover .filmCardDiv{
   border: solid var(--color-yellow) 2px;
 }
-/* Пустая карточка */
-.filmCard--empty{
+/* Карточка Больше фильмов */
+.filmCard.more{
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.filmCard--more{
   width: 160px;
   height: 240px;
-  background-color: var(--color-text-darker);
+  background-color: var(--color-background-main);
   border: 2px var(--color-white) dotted;
   border-radius: 10px;
-  -webkit-transition: border 0.3s linear;
-  -o-transition: border 0.3s linear;
-  transition: border 0.3s linear;
+  opacity: 50%;
+
+  -webkit-transition: border 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
+
+  -o-transition: border 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
+
+  transition: border 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
 
   display: -webkit-box;
 
@@ -537,16 +543,46 @@
       align-content: center;
   text-align: center;
 }
-.filmCard--empty:hover{
+.filmCard.more:hover .filmCard--more{
   border: 2px var(--color-yellow) dotted;
+  background-color: var(--color-foreground-main);
+  opacity: 100%;
 }
-.filmCard--empty img{
+.filmCard--moreIcon{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.filmCard--moreIcon1{
+  width: 50px;
+  height: auto;
+  -webkit-filter: var(--svgColor-bright);
+          filter: var(--svgColor-bright);
+}
+.filmCard--moreIcon2{
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: var(--color-background-main);
+
+  opacity: 0%;
+  -webkit-transition: opacity 0.3s linear, background-color 0.3s linear;
+  -o-transition: opacity 0.3s linear, background-color 0.3s linear;
+  transition: opacity 0.3s linear, background-color 0.3s linear;
+}
+.filmCard--moreIcon2 img{
   width: 50px;
   height: auto;
   -webkit-filter: var(--svgColor-yellow);
           filter: var(--svgColor-yellow);
 }
-.filmCard--empty p{
+.filmCard.more:hover .filmCard--moreIcon2{
+  background-color: var(--color-foreground-main);
+  opacity: 100%;
+}
+.filmCard--more p{
+  margin-top: 16px;
   width: 100px;
 }
 .filmCardDiv--spec{
@@ -644,8 +680,6 @@
 .filmCard--Year{
   margin-top: 5px;
   font-weight: 700;
-
-  /* justify-content: space-between; */
 }
 .filmCard--Year p{
   display: -webkit-box;
@@ -655,6 +689,17 @@
 .filmCard--Year p:nth-child(2){
   padding: 0 8px;
 }
+
+/* Пустая карточка */
+.filmCard--empty{
+  width: 160px;
+  min-height: 240px;
+  margin: 30px 0;
+  background-color: aqua;
+}
+
+
+
 
 
 @media (max-width: 1110px) {

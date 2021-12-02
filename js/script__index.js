@@ -201,27 +201,37 @@ function Index__GetActiveButtonPosition(firstLoad){
 
 
 /*----------------- Карточки фильмов -----------------*/
+var Index__FilmCardsListToday = new Array();
+var Index__FilmCardsListSoon = new Array();
 
-Index__FilmCardsTodayAdd(0, "index-filmCards-Today", Index__FilmCardsToday);
-Index__FilmCardsTodayAdd(0, "index-filmCards-Soon", Index__FilmCardsSoon);
+Index__FilmCardsTodayAdd(0, "index-filmCards-Today", Index__FilmCardsToday, Index__FilmCardsListToday, true);
+Index__FilmCardsTodayAdd(0, "index-filmCards-Soon", Index__FilmCardsSoon, Index__FilmCardsListSoon, true);
 
-function Index__FilmCardsTodayAdd(startingID, targetName, listFilms){
+function Index__FilmCardsTodayAdd(startingID, targetName, listFilms, arrayList, IsMoreCard, maxAmount = 0){
   // Куда добавить карточки
-  var target = document.getElementById(targetName);
+  let target = document.getElementById(targetName);
+
+  // Создать пустые
+  // for (let i = 0; i < maxAmount; i++) {
+  //   var newCard = document.createElement("div");
+  //   newCard.classList = "filmCard--empty";
+  //   target.append(newCard);
+  // }
 
   for (let i = startingID; i < listFilms.length; i++) {
     // Новая карточка
-    var newCard = document.createElement("a");
+    let newCard = document.createElement("a");
     newCard.href = "";
     newCard.classList = "filmCard";
 
     // Контейнер обложки фильма
-    var newCard_div = document.createElement("div");
+    let newCard_div = document.createElement("div");
     newCard_div.classList = "filmCardDiv";
     newCard.appendChild(newCard_div);
 
     // Обложка фильма
     let newCard_img = document.createElement("img");
+    newCard_img.classList = "filmCardCover";
     newCard_img.src = "img/filmCards/" + (targetName.split('-')[2]).toLowerCase() + "/cover" + i + ".jpg";
     newCard_div.appendChild(newCard_img);
 
@@ -255,32 +265,32 @@ function Index__FilmCardsTodayAdd(startingID, targetName, listFilms){
     }
 
     // Контейнер информации
-    var newCard_div_spec = document.createElement("div");
+    let newCard_div_spec = document.createElement("div");
     newCard_div_spec.classList = "filmCardDiv--spec";
     newCard_div.appendChild(newCard_div_spec);
 
     // Возрастной рейтинг
-    var newCard_rating = document.createElement("p");
+    let newCard_rating = document.createElement("p");
     newCard_rating.classList = "filmCard--Rating";
     newCard_rating.textContent = listFilms[i][2];
     newCard_div_spec.appendChild(newCard_rating);
 
     if (listFilms[i][4]) {
       // Субтитры
-      var newCard_subs = document.createElement("p");
+      let newCard_subs = document.createElement("p");
       newCard_subs.classList = "filmCard--Subs";
       newCard_subs.textContent = "Суб";
       newCard_div_spec.appendChild(newCard_subs);
     }
 
     // Контейнер доп. информации
-    var newCard_div_info = document.createElement("div");
+    let newCard_div_info = document.createElement("div");
     newCard_div_info.classList = "filmCardDiv--info";
     newCard_div.appendChild(newCard_div_info);
 
     // Жанры
     if (listFilms[i][3] != null & listFilms[i][3] != "") {
-      var newCard_genres = document.createElement("p");
+      let newCard_genres = document.createElement("p");
       newCard_genres.classList = "filmCard--Genres";
       newCard_genres.textContent = listFilms[i][3];
       newCard_div_info.appendChild(newCard_genres);
@@ -288,33 +298,72 @@ function Index__FilmCardsTodayAdd(startingID, targetName, listFilms){
     else newCard_img.classList = "noGenres";
 
     // Продолжительность + Год выхода
-    var newCard_year = document.createElement("div");
+    let newCard_year = document.createElement("div");
     newCard_year.classList = "filmCard--Year";
     newCard_div_info.appendChild(newCard_year);
 
-    var newCard_year_date = document.createElement("p");
+    let newCard_year_date = document.createElement("p");
     newCard_year_date.textContent = listFilms[i][5];
     newCard_year.appendChild(newCard_year_date);
 
     if (listFilms[i][6] != null & listFilms[i][6] != "") {
-      var newCard_year_dot = document.createElement("p");
+      let newCard_year_dot = document.createElement("p");
       newCard_year_dot.textContent = "·";
       newCard_year.appendChild(newCard_year_dot);
 
-      var newCard_year_length = document.createElement("p");
+      let newCard_year_length = document.createElement("p");
       newCard_year_length.textContent = listFilms[i][6];
       newCard_year.appendChild(newCard_year_length);
     }
 
-
-
     // Название фильма
-    var newCard_name = document.createElement("p");
-    newCard_name.classList = "filmCard__name";
+    let newCard_name = document.createElement("p");
+    newCard_name.classList = "filmCard--name";
     newCard_name.textContent = listFilms[i][0];
     newCard.appendChild(newCard_name);
 
     // Добавить карточку
+    target.append(newCard);
+    arrayList.push(newCard);
+  }
+
+  // Кнопка Больше фильмов
+  if (IsMoreCard) {
+    arrayList[arrayList.length - 1].style.display = "none";
+
+    let newCard = document.createElement("a");
+    newCard.href = "";
+    newCard.classList = "filmCard";
+    newCard.classList.add("more");
+
+    let newCard_div = document.createElement("div");
+    newCard_div.classList = "filmCard--more";
+    newCard.appendChild(newCard_div);
+
+
+    let newCard_divIcon = document.createElement("div");
+    newCard_divIcon.classList = "filmCard--moreIcon";
+    newCard_div.appendChild(newCard_divIcon);
+
+    let newCard_img = document.createElement("img");
+    newCard_img.classList = "filmCard--moreIcon1";
+    newCard_img.src = "img/icon-plus.svg";
+    newCard_img.alt = "+";
+    newCard_divIcon.appendChild(newCard_img);
+
+    let newCard_divIcon2 = document.createElement("div");
+    newCard_divIcon2.classList = "filmCard--moreIcon2";
+    newCard_divIcon.appendChild(newCard_divIcon2);
+
+    let newCard_img2 = document.createElement("img");
+    newCard_img2.src = "img/icon-plus.svg";
+    newCard_img2.alt = "+";
+    newCard_divIcon2.appendChild(newCard_img2);
+
+    let newCard_p = document.createElement("p");
+    newCard_p.textContent = "Больше фильмов";
+    newCard_div.appendChild(newCard_p);
+
     target.append(newCard);
   }
 }
