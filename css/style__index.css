@@ -454,12 +454,15 @@
 
   z-index: 2;
 
-  -webkit-filter: blur(0px);
 
+  -webkit-filter: blur(0px);
           filter: blur(0px);
-  -webkit-transform: filter 0.1s linear;
-      -ms-transform: filter 0.1s linear;
-          transform: filter 0.1s linear;
+
+  -webkit-transition: -webkit-filter 0.1s linear;
+  transition: -webkit-filter 0.1s linear;
+  -o-transition: filter 0.1s linear;
+  transition: filter 0.1s linear;
+  transition: filter 0.1s linear, -webkit-filter 0.1s linear;
 }
 .filmCard:hover img:not(.noGenres){
   -webkit-filter: blur(1px);
@@ -588,45 +591,70 @@
   border-radius: 5px 5px 5px 5px;
   margin-left: 3px;
 }
+/* Инфо при наведении */
+.filmCardDiv--info{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+
+  width: 166px;
+  height: 246px;
+  margin-top: -3px;
+  margin-left: -3px;
+  z-index: 6;
+  position: absolute;
+  border-radius: 10.6px;
+  background-image: -o-linear-gradient(bottom, rgba(0,0,0,0) 15, rgba(0, 0, 0, 0.85) 100%);
+  background-image: -o-linear-gradient(bottom, rgba(0,0,0,0) 15%, rgba(0, 0, 0, 0.85) 100%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(15%, rgba(0,0,0,0)), to(rgba(0, 0, 0, 0.85)));
+  background-image: linear-gradient(0deg, rgba(0,0,0,0) 15%, rgba(0, 0, 0, 0.85) 100%);
+
+  opacity: 0%;
+  -webkit-transition: opacity 0.1s linear;
+  -o-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+
+  padding: 4px 10px;
+
+  color: white;
+  font-size: 13px;
+}
+.filmCard:hover .filmCardDiv--info{
+  opacity: 100%;
+}
+
 /* Жанры */
-.filmCardGenres{
+.filmCard--Year,
+.filmCard--Genres{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 
-  width: 166px;
-  height: 246px;
-
-  margin-top: -3px;
-  margin-left: -3px;
-
-  z-index: 6;
-  position: absolute;
-
-  border-radius: 10.6px;
-
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(20%, rgba(0,0,0,0)), to(rgba(0, 0, 0, 0.85)));
-
-  background-image: -o-linear-gradient(bottom, rgba(0,0,0,0) 20%, rgba(0, 0, 0, 0.85) 100%);
-
-  background-image: linear-gradient(0deg, rgba(0,0,0,0) 20%, rgba(0, 0, 0, 0.85) 100%);
-  opacity: 0%;
-  -webkit-transition: opacity 0.1s linear;
-  -o-transition: opacity 0.1s linear;
-  transition: opacity 0.1s linear;
-
-  padding: 2px 10px;
-
-  color: white;
-  font-size: 13px;
-}
-.filmCard:hover .filmCardGenres{
-  opacity: 100%;
+  line-height: 18px;
 }
 
+.filmCard--Year{
+  margin-top: 5px;
+  font-weight: 700;
 
+  /* justify-content: space-between; */
+}
+.filmCard--Year p{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.filmCard--Year p:nth-child(2){
+  padding: 0 8px;
+}
 
 
 @media (max-width: 1110px) {

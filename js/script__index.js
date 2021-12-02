@@ -15,35 +15,34 @@ var Index__SliderFilms = new Array(
   new Array("pEyrpF0kSKI", "Последняя дуэль", "Нормандский рыцарь Жан де Карруж по возвращении с войны узнаёт, что его сосед и соперник Жак Ле Гри изнасиловал его жену Маргарит. Однако у Ле Гри обнаружились сильные союзники, словам женщины никто не верит, и Карруж обращается за помощью лично к королю Франции Карлу VI. Заслушав все свидетельства, король постановил, что конфликт должен быть разрешён в честном поединке. От исхода битвы зависит судьба не только Ле Гри и Карружа, но и жены последнего. В случае поражения мужа её должны сжечь на костре за ложные обвинения." ),
   new Array("PJX6a06gnEY", "Не время умирать", "Бонд оставил оперативную службу и наслаждается спокойной жизнью на Ямайке. Все меняется, когда на островепоявляется его старый друг Феликс Лейтер из ЦРУ с просьбой о помощи. Миссия по спасению похищенного ученого оказывается опаснее, чем предполагалось изначально. Бонд попадает в ловушку к таинственному злодею, который владеет уникальным технологическим оружием." )
 );
-// База данных фильмов 2: Название / Теги / Возрастной рейтинг / Жанры / Субтитры
+// База данных фильмов 2: Название / Теги / Возрастной рейтинг / Жанры / Субтитры / Год выхода / Длительность
 var Index__FilmCardsToday = new Array(
-  new Array("Веном 2", null, "16+", "Триллер, Ужасы, Фантастика, Экшн", false),
-  new Array("Семейка Аддамс: Горящий тур", null, "12+", "Комедия, Мультфильм, Ужасы, Фэнтези", false),
-  new Array("Не время умирать", null, "12+", "Боевик, Приключения, Триллер", false),
-  new Array("Дюна", "new", "12+", "Драма, Приключения, Фантастика", false),
-  new Array("Gorillaz: Song Machine. Live из Конга", null, "16+", "Фильм-Концерт, Документальный", true),
-  new Array("Возвращение", null, "18+", "Драма, Комедия", false),
-  new Array("Кощей. Начало", null, "6+", "Мультфильм, Семейный, Приключения, Фэнтези", false),
-  new Array("Кошмар на улице вязов", null, "18+", "Ужасы", false),
-  new Array("Ледяной демон", null, "16+", "Ужасы, Триллер", false),
-  new Array("Охотники за привидениями: наследники", null, "12+", "Комедия, Фантастика", true),
-  new Array("Энканто", null, "6+", "Комедия, Мультфильм, Мюзикл, Приключения, Семейный, Фэнтези", false),
-  new Array("Лётчик", null, "12+", "Драма", false),
-  new Array("Французский вестник. Приложение к газете «Либерти. Канзас ивнинг сан»", null, "18+", "Драма, Комедия, Мелодрама", true),
-  new Array("Обитель Зла: Раккун Сити", "new", "18+", "Боевик, Детектив, Ужасы, Фантастика", false),
-  new Array("Вечные", null, "18+", "Приключения, Экшн", false),
-  new Array("Король Ричард", null, "12+", "Биография, Драма, Спорт", false),
-  new Array("Прошлой ночью в Сохо", "new", "18+", "Драма, Триллер, Ужасы", false),
-  new Array("Джон Уик 3", null, "18+", "Триллер, Экшн", false),
+  new Array("Веном 2", null, "16+", "Триллер, Ужасы, Фантастика, Экшн", false, "2021", "1ч 36м"),
+  new Array("Семейка Аддамс: Горящий тур", null, "12+", "Комедия, Мультфильм, Ужасы, Фэнтези", false, "2021", "1ч 33м"),
+  new Array("Не время умирать", null, "12+", "Боевик, Приключения, Триллер", false, "2021", "2ч 43м"),
+  new Array("Дюна", "new", "12+", "Драма, Приключения, Фантастика", false, "2021", "2ч 36м"),
+  new Array("Gorillaz: Song Machine. Live из Конга", null, "16+", "Фильм-Концерт, Документальный", true, "2021", "2ч 37м"),
+  new Array("Возвращение", null, "18+", "Драма, Комедия", false, "2006", "1ч 51м"),
+  new Array("Кощей. Начало", null, "6+", "Мультфильм, Семейный, Приключения, Фэнтези", false, "2021", "1ч 30м"),
+  new Array("Кошмар на улице вязов", null, "18+", "Ужасы", false, "1984", "1ч 31м"),
+  new Array("Ледяной демон", null, "16+", "Ужасы, Триллер", false, "2021", "1ч 32м"),
+  new Array("Охотники за привидениями: наследники", null, "12+", "Комедия, Фантастика", true, "2021", "2ч 4м"),
+  new Array("Энканто", null, "6+", "Комедия, Мультфильм, Мюзикл, Приключения, Семейный, Фэнтези", false, "2021", "1ч 49м"),
+  new Array("Лётчик", null, "12+", "Драма", false, "2021", "1ч 45м"),
+  new Array("Французский вестник. Приложение к газете «Либерти. Канзас ивнинг сан»", null, "18+", "Драма, Комедия, Мелодрама", true, "2021", "1ч 48м"),
+  new Array("Обитель Зла: Раккун Сити", "new", "18+", "Боевик, Детектив, Ужасы, Фантастика", false, "2021", ""),
+  new Array("Вечные", null, "18+", "Приключения, Экшн", false, "2021", "2ч 37м"),
+  new Array("Король Ричард", null, "12+", "Биография, Драма, Спорт", false, "2021", "2ч 25м"),
+  new Array("Прошлой ночью в Сохо", "new", "18+", "Драма, Триллер, Ужасы", false, "2021", "1ч 56м"),
+  new Array("Джон Уик 3", null, "18+", "Триллер, Экшн", false, "2019", "2ч 11м"),
 );
-// База данных фильмов 3: Название / Теги / Возрастной рейтинг / Жанры / Субтитры
 var Index__FilmCardsSoon = new Array(
-  new Array("Заводной апельсин", "exclusive", "18+", "Драма, Криминал, Фантастика", true),
-  new Array("Человек-паук: Нет пути домой", null, "12+", "Фантастика, Боевик, Приключения", false),
-  new Array("Матрица: Воскрешение", "available", "12+", "Фантастика, Боевик", false),
-  new Array("Дом Gucci", "available", "18+", "Криминал, Триллер, Драма", true),
-  new Array("Чёрная месса", null, "18+", "Ужасы", false),
-  new Array("Большой красный пес Клиффорд", null, "6+", "Анимация, Комедия", false),
+  new Array("Заводной апельсин", "exclusive", "18+", "Драма, Криминал, Фантастика", true, "1971", "1ч 36м"),
+  new Array("Человек-паук: Нет пути домой", null, "12+", "Фантастика, Боевик, Приключения", false, "2021", "2ч 30м"),
+  new Array("Матрица: Воскрешение", "available", "12+", "Фантастика, Боевик", false, "2021", "2ч 28м"),
+  new Array("Дом Gucci", "available", "18+", "Криминал, Триллер, Драма", true, "2021", "2ч 38м"),
+  new Array("Большой красный пес Клиффорд", null, "6+", "Анимация, Комедия", false, "2021", "1ч 37м"),
+  new Array("Чёрная месса", null, "18+", "Ужасы", false, "2021", "1ч 32м"),
 );
 
 
@@ -261,27 +260,53 @@ function Index__FilmCardsTodayAdd(startingID, targetName, listFilms){
     newCard_div.appendChild(newCard_div_spec);
 
     // Возрастной рейтинг
-    var newCard_rating = document.createElement("div");
+    var newCard_rating = document.createElement("p");
     newCard_rating.classList = "filmCard--Rating";
     newCard_rating.textContent = listFilms[i][2];
     newCard_div_spec.appendChild(newCard_rating);
 
     if (listFilms[i][4]) {
       // Субтитры
-      var newCard_subs = document.createElement("div");
+      var newCard_subs = document.createElement("p");
       newCard_subs.classList = "filmCard--Subs";
       newCard_subs.textContent = "Суб";
       newCard_div_spec.appendChild(newCard_subs);
     }
 
+    // Контейнер доп. информации
+    var newCard_div_info = document.createElement("div");
+    newCard_div_info.classList = "filmCardDiv--info";
+    newCard_div.appendChild(newCard_div_info);
+
     // Жанры
     if (listFilms[i][3] != null & listFilms[i][3] != "") {
-      var newCard_genres = document.createElement("div");
-      newCard_genres.classList = "filmCardGenres";
+      var newCard_genres = document.createElement("p");
+      newCard_genres.classList = "filmCard--Genres";
       newCard_genres.textContent = listFilms[i][3];
-      newCard_div.appendChild(newCard_genres);
+      newCard_div_info.appendChild(newCard_genres);
     }
     else newCard_img.classList = "noGenres";
+
+    // Продолжительность + Год выхода
+    var newCard_year = document.createElement("div");
+    newCard_year.classList = "filmCard--Year";
+    newCard_div_info.appendChild(newCard_year);
+
+    var newCard_year_date = document.createElement("p");
+    newCard_year_date.textContent = listFilms[i][5];
+    newCard_year.appendChild(newCard_year_date);
+
+    if (listFilms[i][6] != null & listFilms[i][6] != "") {
+      var newCard_year_dot = document.createElement("p");
+      newCard_year_dot.textContent = "·";
+      newCard_year.appendChild(newCard_year_dot);
+
+      var newCard_year_length = document.createElement("p");
+      newCard_year_length.textContent = listFilms[i][6];
+      newCard_year.appendChild(newCard_year_length);
+    }
+
+
 
     // Название фильма
     var newCard_name = document.createElement("p");
