@@ -40,6 +40,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   --svgColor-yellow: brightness(0) saturate(100%) invert(64%) sepia(73%) saturate(428%) hue-rotate(1deg) brightness(107%) contrast(98%);
   --svgColor-dark: invert(66%) sepia(19%) saturate(220%) hue-rotate(197deg) brightness(100%) contrast(90%);
   --svgColor-bright: invert(99%) sepia(0%) saturate(5461%) hue-rotate(302deg) brightness(116%) contrast(74%);
+  --svgColor-darkest: invert(11%) sepia(22%) saturate(438%) hue-rotate(188deg) brightness(92%) contrast(89%);
 
 
   /* Шорткаты для общего оформления */

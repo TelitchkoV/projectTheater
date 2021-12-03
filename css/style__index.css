@@ -93,7 +93,7 @@
 
   margin-bottom: 6px;
 }
-.index__slider-thumbnail img:first-of-type{
+.index__slider-thumbnailImage{
 
   /* Фикс для браузера FireFox */
   -ms-flex-item-align: start;
@@ -115,7 +115,8 @@
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   pointer-events: none;
 }
-.index__slider-thumbnail img:last-of-type{
+.index__slider-thumbnailIcon.Dark,
+.index__slider-thumbnailIcon.Bright{
   position: absolute;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -135,19 +136,27 @@
   -o-transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out, -webkit-transform 0.3s ease-out;
-  -webkit-filter: var(--svgColor-bright);
-          filter: var(--svgColor-bright);
+
   pointer-events: none;
+}
+.index__slider-thumbnailIcon.Dark{
+  -webkit-filter: var(--svgColor-darkest);
+  filter: var(--svgColor-darkest);
+}
+.index__slider-thumbnailIcon.Bright{
+  -webkit-filter: var(--svgColor-bright);
+  filter: var(--svgColor-bright);
 }
 .index__slider-thumbnail:hover{
   cursor: pointer;
 }
-.index__slider-thumbnail:hover img:first-of-type{
+.index__slider-thumbnail:hover .index__slider-thumbnailImage{
   -webkit-transform: scale(1.085);
       -ms-transform: scale(1.085);
           transform: scale(1.085);
 }
-.index__slider-thumbnail:hover img:last-of-type{
+.index__slider-thumbnail:hover .index__slider-thumbnailIcon.Dark,
+.index__slider-thumbnail:hover .index__slider-thumbnailIcon.Bright{
   -webkit-transform: scale(0.95);
       -ms-transform: scale(0.95);
           transform: scale(0.95);
@@ -288,7 +297,7 @@
 .index__slider-FilmBtn.prime{
   /* Фикс - иногда кнопка не отображается
   при первой загрузке страницы */
-  top: -48px;
+  /* top: -48px; */
   position: absolute;
   -webkit-transition:
     top 0.3s ease-out,
@@ -514,7 +523,7 @@
   background-color: var(--color-background-main);
   border: 2px var(--color-white) dotted;
   border-radius: 10px;
-  opacity: 50%;
+  opacity: 100%;
 
   -webkit-transition: border 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
 
