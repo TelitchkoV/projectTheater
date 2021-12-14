@@ -191,7 +191,7 @@ main > *:first-child{
 
 
 
-@media (max-width: 1110px) {
+@media (max-width: 1130px) {
   /* .container{
     width: 100%;
   } */
@@ -201,7 +201,7 @@ main > *:first-child{
 }
 @media (max-width: 1024px){
   .container{
-    width: 768px;
+    width: 748px;
   }
 }
 @media (max-width: 768px){
@@ -209,7 +209,7 @@ main > *:first-child{
     padding-top: 50px;
   }
   .container{
-    width: 580px;
+    width: 560px;
   }
 }
 @media (max-width: 580px){

@@ -343,24 +343,22 @@ function DefaultindexDef(){
 
 
 window.addEventListener('resize', function(){
-  if (window.matchMedia("(min-width: 1111px)").matches) {
+  if (window.matchMedia("(min-width: 1131px)").matches) {
     indexDef = 0;
     if (indexDef != indexDefPrev) {
       indexDefPrev = indexDef;
 
       Index_CutFilmCards(18, Index__FilmCardsListToday);
       Index_CutFilmCards(6, Index__FilmCardsListSoon);
-      console.log("18");
     }
   }
-  if (window.matchMedia("(max-width: 1110px)").matches & window.matchMedia("(min-width: 1025px)").matches) {
+  if (window.matchMedia("(max-width: 1130px)").matches & window.matchMedia("(min-width: 1025px)").matches) {
     indexDef = 1;
     if (indexDef != indexDefPrev) {
       indexDefPrev = indexDef;
 
       Index_CutFilmCards(15, Index__FilmCardsListToday);
       Index_CutFilmCards(5, Index__FilmCardsListSoon);
-      console.log("15");
     }
   }
   if (window.matchMedia("(max-width: 1024px)").matches & window.matchMedia("(min-width: 769px)").matches) {
@@ -368,7 +366,6 @@ window.addEventListener('resize', function(){
     if (indexDef != indexDefPrev) {
       indexDefPrev = indexDef;
 
-      console.log("12");
       Index_CutFilmCards(12, Index__FilmCardsListToday);
       Index_CutFilmCards(4, Index__FilmCardsListSoon);
     }
@@ -378,7 +375,6 @@ window.addEventListener('resize', function(){
     if (indexDef != indexDefPrev) {
       indexDefPrev = indexDef;
 
-      console.log("9");
       Index_CutFilmCards(9, Index__FilmCardsListToday);
       Index_CutFilmCards(6, Index__FilmCardsListSoon);
     }
@@ -388,7 +384,6 @@ window.addEventListener('resize', function(){
     if (indexDef != indexDefPrev) {
       indexDefPrev = indexDef;
 
-      console.log("6");
       Index_CutFilmCards(6, Index__FilmCardsListToday);
       Index_CutFilmCards(5, Index__FilmCardsListSoon);
     }
@@ -400,7 +395,6 @@ window.addEventListener('resize', function(){
 
       Index_CutFilmCards(4, Index__FilmCardsListToday);
       Index_CutFilmCards(4, Index__FilmCardsListSoon);
-      console.log("4");
     }
   }
 });

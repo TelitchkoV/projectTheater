@@ -313,12 +313,16 @@ header > *:nth-child(2){
 
 
 
-@media (max-width: 1110px){
+@media (max-width: 1130px){
   .header__section:nth-child(3){
     display: none;
   }
 }
 @media (max-width: 1024px){
+  .header__menu__item{
+    padding-left: 20px;
+    font-size: 18px;
+  }
 }
 @media (max-width: 768px){
   .header__sections{
@@ -351,6 +355,17 @@ header > *:nth-child(2){
     opacity: 100%;
 
     width: 100%;
+
+    -webkit-box-pack: center;
+
+        -ms-flex-pack: center;
+
+            justify-content: center;
+  }
+  .header__menu__list{
+    width: 560px !important;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 @media (max-width: 425px){
