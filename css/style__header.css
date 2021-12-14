@@ -313,15 +313,19 @@ header > *:nth-child(2){
 
 
 
-@media (max-width: 1024px){
+@media (max-width: 1110px){
   .header__section:nth-child(3){
     display: none;
   }
+}
+@media (max-width: 1024px){
 }
 @media (max-width: 768px){
   .header__sections{
     min-height: 50px;
     padding: 0 10px;
+
+    width: 100%;
   }
   .header__section:nth-child(2){
     display: none;
@@ -345,6 +349,8 @@ header > *:nth-child(2){
     display: -ms-flexbox;
     display: flex;
     opacity: 100%;
+
+    width: 100%;
   }
 }
 @media (max-width: 425px){

@@ -673,6 +673,9 @@
 .filmCard:hover .filmCardDiv--info{
   opacity: 100%;
 }
+.filmCardDiv--alt{
+  display: none;
+}
 
 /* Жанры */
 .filmCard--Year,
@@ -717,10 +720,276 @@
   }
 }
 @media (max-width: 768px){
+  .filmCard{
+    margin: 15px 0;
+  }
+}
+@media (max-width: 580px){
+  .filmCard:not(.more){
+    width: 100%;
+    background-color: var(--color-foreground-main);
+
+    max-height: 240px;
+
+    margin: 10px 0;
+  }
+  .filmCard.more{
+    margin: 10px 0;
+    width: 100%;
+    height: 50px;
+  }
+  .filmCard--more{
+    width: 100%;
+    height: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .filmCard--more p{
+    margin-top: 0;
+    width: auto;
+  }
+  .filmCard--moreIcon{
+    /* margin-left: 7px; */
+    display: none;
+  }
+  /* .filmCard--more img{
+    width: 35px;
+  } */
+  .filmCard:hover .filmCardCover{
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+  .filmCardDiv--info,
+  .filmCardDiv--spec,
+  .filmCard--name,
+  .filmCard--shadow,
+  .filmCard--new,
+  .filmCard--exclusive,
+  .filmCard--available{
+    display: none;
+  }
+  .filmCardCover{
+    display: block;
+    min-width: 160px;
+    min-height: 240px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .filmCardDiv--alt{
+    padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+
+    width: auto;
+
+    max-height: 240px;
+    overflow: hidden;
+  }
+  .filmCard--name--alt{
+    line-height: 18px;
+    font-weight: 700;
+
+    margin-bottom: 5px;
+  }
+  .filmCardDiv--spec-alt{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+
+    margin-bottom: 5px;
+  }
+  .filmCard--Subs--alt,
+  .filmCard--Rating--alt{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+
+    color: white;
+    font-size: 13px;
+    background-color: #000000b2;
+    border: solid white 1px;
+    width: 34px;
+
+    opacity: 85%;
+    border-radius: 5px;
+
+    margin-right: 3px;
+  }
+  .filmCard--Subs--alt{
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0 5px;
+  }
+  .filmCard--new--alt,
+  .filmCard--exclusive--alt,
+  .filmCard--available--alt{
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0 5px;
+    border-radius: 5px;
+    color: var(--color-text-darkest);
+    font-weight: 700;
+  }
+  .filmCard--Year--Alt,
+  .filmCard--Genres--alt{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+    line-height: 18px;
+  }
+  .filmCard--Year--Alt{
+    /* font-weight: 700; */
+
+    margin-bottom: 5px;
+  }
+  .filmCard--Year--Alt p{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .filmCard--Year--Alt p:nth-child(2){
+    padding: 0 8px;
+  }
+  .filmCard--Genres--alt{
+    margin-top: 5px;
+  }
+}
+@media (max-width: 375px) {
+  .filmCard--Year--Alt{
+    font-size: 12px;
+  }
+  .filmCard--Genres--alt{
+    margin-top: 0px;
+    font-size: 12px;
+    line-height: 16px;
+  }
 }
 @media (max-width: 359px) {
-  .filmCards__list{
+  /* .filmCards__list{
     -ms-flex-pack: distribute;
         justify-content: space-around;
+  } */
+}
+@media (max-width: 320px) {
+  .filmCard.more{
+    margin: 7px auto;
+    width: 160px;
   }
+  .filmCard:not(.more){
+    width: 160px;
+    background-color: var(--color-foreground-main);
+
+    margin: 7px auto;
+
+    height: auto;
+    max-height: none;
+  }
+  .filmCardDiv--spec,
+  .filmCard--name{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .filmCard--name{
+    padding: 5px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .filmCardCover{
+    z-index: 1;
+  }
+  .filmCardDiv--alt{
+    z-index: 10;
+    /* display: none; */
+    position: absolute;
+    padding: 0;
+  }
+  .filmCardDiv--alt > * {
+    display: none;
+  }
+  .filmCardDiv--alt > *:nth-child(2){
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .filmCardDiv--alt > *:nth-child(2) > *{
+    display: none;
+  }
+  .filmCardDiv--alt > *:nth-child(2) > .filmCard--new--alt,
+  .filmCardDiv--alt > *:nth-child(2) > .filmCard--exclusive--alt,
+  .filmCardDiv--alt > *:nth-child(2) > .filmCard--available--alt{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 10px 5px 5px 5px;
+  }
+}
+@media (max-width: 200px){
+  /* .filmCard:not(.more){
+    width: auto;
+    height: auto;
+    min-width: none;
+    min-height: none;
+  }
+  .filmCardDiv{
+    width: auto;
+    height: auto;
+    min-width: none;
+    min-height: none;
+  }
+  .filmCardCover{
+    display: flex;
+    width: 100% !important;
+    height: auto !important;
+    min-width: none !important;
+    min-height: none !important;
+    object-fit: fill !important;
+  }
+  .filmCard.more{
+    width: 100%;
+    min-width: none;
+    min-height: none;
+    max-width: 100%;
+  }
+  .filmCard--name{
+    max-width: 100%;
+    height: auto;
+    min-width: none;
+    min-height: none;
+  } */
 }

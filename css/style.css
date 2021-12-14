@@ -192,17 +192,50 @@ main > *:first-child{
 
 
 @media (max-width: 1110px) {
-  .container{
+  /* .container{
     width: 100%;
+  } */
+  .container{
+    width: 980px;
+  }
+}
+@media (max-width: 1024px){
+  .container{
+    width: 768px;
   }
 }
 @media (max-width: 768px){
   main > *:first-child{
     padding-top: 50px;
   }
+  .container{
+    width: 580px;
+  }
 }
-@media (max-width: 320px) {
+@media (max-width: 580px){
+  .container{
+    width: 100%;
+  }
+  .section--heading{
+    padding-bottom: 30px;
+  }
+}
+@media (max-width: 425px){
+  .container{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   .section--heading{
     font-size: 24px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
+}
+@media (max-width: 375px){
+}
+@media (max-width: 320px) {
+  /* .section--heading{
+    font-size: 24px;
+  } */
 }
